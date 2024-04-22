@@ -35,6 +35,12 @@
 }
 
 @layer components {
+    .paragraph {
+        @apply mb-10 mt-3;
+    }
+}
+
+@layer components {
     .logo {
         @apply w-48 transition-all duration-200 ease-in-out large:w-40 wide:w-48;
     }
@@ -48,7 +54,7 @@
 
 @layer components {
     .book-now-nav {
-        @apply font-arial mb-2 me-2 inline-flex items-center px-6 py-3 text-center font-bold uppercase tracking-widest focus:outline-none large:px-4 large:py-1 wide:px-6 wide:py-3;
+        @apply font-arial mb-2 me-2 inline-flex items-center px-6 py-3 text-center font-bold uppercase tracking-widest focus:outline-none large:px-4 large:py-2 wide:px-6 wide:py-3;
     }
 }
 
@@ -149,7 +155,7 @@
 }
 
 @layer components {
-    .hotel-description {
+    .page-description {
         @apply mx-auto mt-24 w-1/2 text-center;
     }
 }
@@ -161,19 +167,55 @@
 }
 
 @layer components {
+    .insight-card-gray {
+        @apply mt-24 bg-gray-200/50 py-20 large:mt-10 wide:mt-24;
+    }
+}
+
+@layer components {
+    .insight-card {
+        @apply mt-24 py-20 large:mt-10 wide:mt-24;
+    }
+}
+
+@layer components {
+    .ic-section {
+        @apply mx-auto flex w-4/5 overflow-hidden;
+    }
+}
+
+@layer components {
+    .ic-image {
+        @apply h-[500px] w-[800px] object-cover large:h-[420px] large:w-[550px] wide:h-[500px] wide:w-[800px];
+    }
+}
+
+@layer components {
+    .ic-text {
+        @apply mx-8 flex flex-col justify-between px-5 py-1 large:mx-8 wide:mx-16 wide:w-[200px];
+    }
+}
+
+@layer components {
     .visual-insights {
         @apply mt-24 bg-gray-200/50 py-20 large:mt-10 wide:mt-24;
     }
 }
 
 @layer components {
-    .image-visual-insights {
+    .vi-section {
+        @apply mx-auto flex w-4/6 overflow-hidden;
+    }
+}
+
+@layer components {
+    .vi-image {
         @apply h-[500px] w-[800px] object-cover large:h-[420px] large:w-[550px] wide:h-[500px] wide:w-[800px];
     }
 }
 
 @layer components {
-    .visual-insights-description {
+    .vi-text {
         @apply mx-8 flex flex-col justify-center border-y border-gray-600 p-5 text-center large:mx-8 wide:mx-16;
     }
 }
@@ -186,7 +228,7 @@
 
 @layer components {
     .main-button {
-        @apply font-arial mx-auto mt-10 px-10 py-2 text-sm font-bold uppercase tracking-[2px] outline outline-1 outline-gray-600 hover:bg-[#a88444] hover:text-white hover:outline-[#a88444] large:px-4 large:text-[10px] large:tracking-widest wide:px-10 wide:text-sm wide:tracking-[2px];
+        @apply font-arial mx-auto mt-10 px-10 py-2 text-sm font-bold uppercase tracking-[2px] outline outline-1 outline-gray-600 hover:bg-[#a88444] hover:text-white hover:outline-[#a88444] large:px-4 large:text-[10px] large:tracking-widest wide:px-4 wide:text-xs wide:tracking-widest;
     }
 }
 
@@ -211,5 +253,179 @@
 @layer components {
     .dp-l-image {
         @apply h-[480px] w-full object-cover large:h-[350px] wide:h-[480px];
+    }
+}
+
+@layer components {
+    .visual-harmony {
+        @apply relative h-screen;
+    }
+}
+
+@layer components {
+    .vh-background {
+        @apply absolute inset-0 z-0 bg-cover bg-center;
+    }
+}
+
+@layer components {
+    .vh-section {
+        @apply absolute bottom-0 right-0 z-10 bg-white py-16 large:py-10 wide:py-16;
+    }
+}
+
+@layer components {
+    .vh-inner-section {
+        @apply flex items-center justify-center;
+    }
+}
+
+@layer components {
+    .vh-text {
+        @apply w-96 px-16 text-center large:w-72 large:px-5 wide:w-96 wide:px-10;
+    }
+}
+
+@layer components {
+    .vh-image {
+        @apply h-full w-[900px] object-cover large:w-[600px] wide:w-[900px];
+    }
+}
+
+@layer components {
+    .overlay-impression {
+        @apply relative mx-auto mt-32 h-[530px] w-4/6 large:mt-24 wide:mt-32;
+    }
+}
+
+@layer components {
+    .oi-text {
+        @apply absolute top-0 h-[450px] w-2/3 bg-gray-200/50 py-16 ps-10 large:h-[430px] large:py-10 wide:h-[450px] wide:py-16;
+    }
+}
+
+@layer components {
+    .oi-section {
+        @apply w-96 pe-8 large:w-64 wide:w-96;
+    }
+}
+
+@layer components {
+    .oi-image-section {
+        @apply absolute right-0 top-16 z-10 h-[450px] w-2/3 large:top-10 large:h-[430px] wide:top-16 wide:h-[450px];
+    }
+}
+
+@layer components {
+    .oi-image {
+        @apply h-full w-full object-cover;
+    }
+}
+
+@layer components {
+    .scenics-spotlight {
+        @apply relative h-screen;
+    }
+}
+
+@layer components {
+    .ss-background {
+        @apply absolute inset-0 h-full w-full object-cover;
+    }
+}
+
+@layer components {
+    .ss-section {
+        @apply absolute inset-0 flex items-center;
+    }
+}
+
+@layer components {
+    .ss-text {
+        @apply w-[600px] p-16 text-center text-white large:w-[500px] wide:w-[600px];
+    }
+}
+
+@layer components {
+    .footer {
+        @apply bg-black text-white;
+    }
+}
+
+@layer components {
+    .footer-section {
+        @apply mx-auto w-4/6;
+    }
+}
+
+@layer components {
+    .footer-main {
+        @apply grid grid-cols-5 gap-4 py-10;
+    }
+}
+
+@layer components {
+    .footer-logo {
+        @apply w-full brightness-0 invert-[1];
+    }
+}
+
+@layer components {
+    .footer-title {
+        @apply font-arial mb-2 uppercase tracking-[0.2rem];
+    }
+}
+
+@layer components {
+    .footer-bottom {
+        @apply flex justify-between border-t border-gray-600 py-5 text-center;
+    }
+}
+
+@layer components {
+    .navbar {
+        @apply bg-black/30;
+    }
+}
+
+@layer components {
+    .nav-icon {
+        @apply inline-flex items-center text-center;
+    }
+}
+
+@layer components {
+    .nav-left {
+        @apply flex items-center;
+    }
+}
+
+@layer components {
+    .nav-middle {
+        @apply flex items-center justify-center;
+    }
+}
+
+@layer components {
+    .nav-right {
+        @apply flex items-center justify-end;
+    }
+}
+
+@layer components {
+    .secondary-button {
+        @apply font-arial mt-10 px-10 text-sm font-bold uppercase tracking-[2px] large:px-6 large:py-2 large:text-[10px] large:tracking-widest wide:px-10 wide:py-4 wide:text-xs wide:tracking-widest;
+    }
+}
+
+@layer components {
+    .secondary-button.transparent {
+        @apply outline outline-1 outline-gray-600 hover:bg-[#a88444] hover:text-white hover:outline-[#a88444];
+    }
+}
+
+@layer components {
+    .secondary-button.black {
+        @apply bg-black text-white outline outline-1 outline-black hover:bg-[#a88444] hover:text-white hover:outline-[#a88444];
     }
 }

@@ -6,7 +6,7 @@ use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
 
-class Desktop extends Component
+class Navbar extends Component
 {
     /**
      * Create a new component instance.
@@ -21,6 +21,6 @@ class Desktop extends Component
      */
     public function render(): View|Closure|string
     {
-        return view('layouts.desktop');
+        return view('components.navbar');
     }
 }
