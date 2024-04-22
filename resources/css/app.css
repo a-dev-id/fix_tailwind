@@ -1,0 +1,215 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.header-iframe-youtube {
+    width: 102%;
+    height: 120%;
+    top: -10%;
+    left: -1%;
+    position: absolute;
+    pointer-events: none;
+}
+
+.font-sans {
+    font-family:
+        Times New Roman,
+        Times,
+        serif;
+}
+
+.font-arial {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+@layer components {
+    .lazy {
+        @apply opacity-0 transition-opacity duration-300 ease-in-out;
+    }
+}
+
+@layer components {
+    .lazy.loaded {
+        @apply opacity-100;
+    }
+}
+
+@layer components {
+    .logo {
+        @apply w-48 transition-all duration-200 ease-in-out large:w-40 wide:w-48;
+    }
+}
+
+@layer components {
+    .logo.shrink {
+        @apply w-[144px] large:w-[100px] wide:w-[144px];
+    }
+}
+
+@layer components {
+    .book-now-nav {
+        @apply font-arial mb-2 me-2 inline-flex items-center px-6 py-3 text-center font-bold uppercase tracking-widest focus:outline-none large:px-4 large:py-1 wide:px-6 wide:py-3;
+    }
+}
+
+@layer components {
+    .book-now-nav.btn-white {
+        @apply font-arial bg-white text-black outline outline-1 hover:bg-[#a88444] hover:text-white hover:outline-[#a88444];
+    }
+}
+
+@layer components {
+    .book-now-nav.btn-black {
+        @apply font-arial bg-[#a88444] text-white outline outline-1 hover:bg-white hover:text-black hover:outline-black;
+    }
+}
+
+@layer components {
+    .nav-border-b {
+        @apply grid grid-cols-3 pb-2 pt-2 text-center;
+    }
+}
+
+@layer components {
+    .nav-border-b.border-white {
+        @apply border-b border-white/50;
+    }
+}
+
+@layer components {
+    .nav-border-b.border-black {
+        @apply border-b border-gray-400/50;
+    }
+}
+
+@layer components {
+    .item {
+        @apply px-5 font-serif uppercase tracking-widest text-white large:px-3 large:tracking-widest wide:px-5 wide:tracking-widest;
+    }
+}
+
+@layer components {
+    .item.text-gray {
+        @apply px-5 text-gray-800 large:px-3 wide:px-5;
+    }
+}
+
+@layer components {
+    body {
+        @apply font-arial text-sm leading-6 tracking-wide text-gray-600 large:text-[11px] large:leading-5 large:tracking-wider wide:text-sm wide:leading-6 wide:tracking-wide;
+    }
+}
+
+@layer components {
+    .navbar {
+        @apply fixed z-50 mx-auto h-auto w-full px-10 drop-shadow-lg transition-all duration-200 ease-in-out;
+    }
+}
+
+@layer components {
+    .newsletter {
+        @apply font-arial px-5 text-xs font-bold uppercase tracking-[.2em] hover:underline hover:underline-offset-4 large:text-[10px] wide:text-xs;
+    }
+}
+
+@layer components {
+    .nav-items {
+        @apply flex items-center justify-center py-4 transition-all ease-in-out;
+    }
+}
+
+@layer components {
+    .main-title {
+        @apply font-sans text-3xl font-medium uppercase tracking-widest large:text-2xl large:tracking-wider wide:text-3xl wide:tracking-widest;
+    }
+}
+
+@layer components {
+    .sub-title {
+        @apply font-sans text-3xl uppercase tracking-widest large:text-lg wide:text-3xl;
+    }
+}
+
+@layer components {
+    .sub-title2 {
+        @apply mt-8 font-sans text-2xl tracking-wide large:text-lg wide:text-2xl;
+    }
+}
+
+@layer components {
+    .card-title {
+        @apply mb-2 font-sans text-lg tracking-widest large:text-base wide:text-lg;
+    }
+}
+
+@layer components {
+    .card-footer {
+        @apply font-arial flex h-12 items-center p-4 font-bold uppercase tracking-widest;
+    }
+}
+
+@layer components {
+    .hotel-description {
+        @apply mx-auto mt-24 w-1/2 text-center;
+    }
+}
+
+@layer components {
+    .featured {
+        @apply mx-auto mt-24 w-11/12;
+    }
+}
+
+@layer components {
+    .visual-insights {
+        @apply mt-24 bg-gray-200/50 py-20 large:mt-10 wide:mt-24;
+    }
+}
+
+@layer components {
+    .image-visual-insights {
+        @apply h-[500px] w-[800px] object-cover large:h-[420px] large:w-[550px] wide:h-[500px] wide:w-[800px];
+    }
+}
+
+@layer components {
+    .visual-insights-description {
+        @apply mx-8 flex flex-col justify-center border-y border-gray-600 p-5 text-center large:mx-8 wide:mx-16;
+    }
+}
+
+@layer components {
+    .line {
+        @apply mx-auto my-4 w-28 border-b border-gray-600;
+    }
+}
+
+@layer components {
+    .main-button {
+        @apply font-arial mx-auto mt-10 px-10 py-2 text-sm font-bold uppercase tracking-[2px] outline outline-1 outline-gray-600 hover:bg-[#a88444] hover:text-white hover:outline-[#a88444] large:px-4 large:text-[10px] large:tracking-widest wide:px-10 wide:text-sm wide:tracking-[2px];
+    }
+}
+
+@layer components {
+    .dual-perspectives {
+        @apply mx-auto my-24 w-4/6 large:my-16 wide:my-24;
+    }
+}
+
+@layer components {
+    .dp-left {
+        @apply mx-10 max-w-xl overflow-hidden large:mx-5 large:max-w-xl wide:mx-10 wide:max-w-xl;
+    }
+}
+
+@layer components {
+    .dp-right {
+        @apply mx-10 max-w-sm overflow-hidden large:mx-5 large:max-w-xs wide:mx-10 wide:max-w-sm;
+    }
+}
+
+@layer components {
+    .dp-l-image {
+        @apply h-[480px] w-full object-cover large:h-[350px] wide:h-[480px];
+    }
+}
