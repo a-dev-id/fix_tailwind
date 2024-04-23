@@ -31,7 +31,7 @@
 </header>
 @endsection
 
-<x-guest>
+<main>
     {{-- page description section --}}
     <section class="page-description" data-aos="fade-up" data-aos-delay="200">
         <h1 class="main-title">Hanging Gardens, Bali Luxury Resort</h1>
@@ -94,4 +94,4 @@
         </div>
     </section>
 
-</x-guest>
+</main>

@@ -22,13 +22,8 @@
 
 <body>
     <x-navbar />
-
     @yield('header')
-
-    <main>
-        {{$slot}}
-    </main>
-
+    {{$slot}}
     <x-footer />
 
     {{-- js --}}
