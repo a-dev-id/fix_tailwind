@@ -18,9 +18,9 @@ class ImagesRelationManager extends RelationManager
     {
         return $form
             ->schema([
-                Forms\Components\TextInput::make('title')
-                    ->required()
-                    ->maxLength(255),
+                Forms\Components\TextInput::make('title'),
+                Forms\Components\FileUpload::make('image')->image()->directory('images/page/images')->hiddenLabel(),
+                Forms\Components\Toggle::make('status')->label('Publish')->required(),
             ]);
     }
 
@@ -30,6 +30,10 @@ class ImagesRelationManager extends RelationManager
             ->recordTitleAttribute('title')
             ->columns([
                 Tables\Columns\TextColumn::make('title'),
+                Tables\Columns\ImageColumn::make('image'),
+                Tables\Columns\ToggleColumn::make('status')->label('Publish')->sortable(),
+                Tables\Columns\TextColumn::make('created_at')->date(),
+                Tables\Columns\TextColumn::make('updated_at')->date(),
             ])
             ->filters([
                 //

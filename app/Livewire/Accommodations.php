@@ -4,10 +4,10 @@ namespace App\Livewire;
 
 use Livewire\Component;
 
-class Accommodation extends Component
+class Accommodations extends Component
 {
     public function render()
     {
-        return view('livewire.accommodation');
+        return view('livewire.accommodations');
     }
 }

@@ -59,19 +59,8 @@ class AdminPanelProvider extends PanelProvider
             ])
             ->navigationGroups([
                 'General',
-                'Advanced',
-            ])
-            ->navigationGroups([
-                NavigationGroup::make()
-                    ->label('General')
-                    ->icon('heroicon-o-shopping-cart'),
-                NavigationGroup::make()
-                    ->label('Advanced')
-                    ->icon('heroicon-o-pencil'),
-                NavigationGroup::make()
-                    ->label(fn (): string => __('navigation.settings'))
-                    ->icon('heroicon-o-cog-6-tooth')
-                    ->collapsed(),
+                'Advance',
+                'Others',
             ]);
     }
 }

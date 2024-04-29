@@ -1,19 +1,18 @@
 @section('meta')
-<title>Document</title>
-<meta name="description" content="" />
-<meta name="keywords" content="" />
-<meta property="og:title" content="" />
-<meta property="og:url" content="" />
+<title>{{$page->meta_title}}</title>
+<meta name="description" content="{{$page->meta_description}}" />
+<meta property="og:title" content="{{$page->meta_title}}" />
+<meta property="og:url" content="{{ url()->full() }}" />
 <meta property="og:type" content="article" />
-<meta property="og:description" content="" />
-<meta property="og:image" content="test.jpg" />
+<meta property="og:description" content="{{$page->meta_description}}" />
+<meta property="og:image" content="{{asset('storage/'.$page->hero_image)}}" />
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:site" content="">
-<meta name="twitter:creator" content="">
-<meta name="twitter:title" content="">
-<meta name="twitter:description" content="">
-<meta name="twitter:image" content="">
-<link href="https://examople.com/link" rel="canonical">
+<meta name="twitter:site" content="{{ url()->full() }}">
+<meta name="twitter:creator" content="Hanging Gardens of Bali">
+<meta name="twitter:title" content="{{$page->meta_title}}">
+<meta name="twitter:description" content="{{$page->meta_description}}">
+<meta name="twitter:image" content="{{asset('storage/'.$page->hero_image)}}">
+<link href="{{ url()->full() }}" rel="canonical">
 @endsection
 
 @section('header')
@@ -44,8 +43,8 @@
 <main>
     {{-- page description section --}}
     <section class="page-description" data-aos="fade-up" data-aos-delay="200">
-        <h1 class="main-title">Hanging Gardens, Bali Luxury Resort</h1>
-        <p class="mt-4 large:mt-3 wide:mt-4">Experience a gastronomic adventure that is without equal in Bali with legendary service that is the essence of Balinese hospitality. Dine while overlooking our spiritual core, "The World's Best Swimming Pool" so named by Conde Nast Traveler.</p>
+        <h1 class="main-title">{{$page->title}}</h1>
+        <div class="mt-4 large:mt-3 wide:mt-4">{!! $page->description !!}</div>
     </section>
 
     {{-- story section --}}
@@ -137,12 +136,12 @@
     {{-- accommodation section --}}
     <section class="visual-insights">
         <div class="vi-section" data-aos="fade-up" data-aos-delay="200">
-            <img class="lazy vi-image" src="{{asset('images/placeholder/horizontal.webp')}}" data-src="https://hanginggardensofbali.com/storage/SgQRRqnqJLlFtSsk4Zc0dtIeupJ7Px-metacDRxYWs5WmVkc3R1STJMWUlKZmxZTlhTN092ekFkLW1ldGFOak00WVdZMU9XSTRNVFZrT1RReU16YzROVGc0T0M1cWNHYz0tLndlYnA=-.webp" alt="Placeholder Image">
+            <img class="lazy vi-image" src="{{asset('images/placeholder/horizontal.webp')}}" data-src="{{asset('storage/'.$accommodation->hero_image)}}" alt="Placeholder Image">
             <div class="vi-text">
-                <h2 class="sub-title">Luxury Resort with Private Pool</h2>
+                <h2 class="sub-title">{{$accommodation->title}}</h2>
                 <div class="line"></div>
-                <p>Our resort has 44 villas with private pools that represent Bali's natural and calm beauty. A wide terrace provides the ideal relaxing place and space to enjoy nature, allow the serene jungle ambiance to seep into the room.</p>
-                <a href="" class="main-button">Discover Luxurious Retreats</a>
+                {{ $accommodation->excerpt }}
+                <a href="{{route($accommodation->button_link)}}" class="main-button">{{$accommodation->button_label}}</a>
             </div>
         </div>
     </section>

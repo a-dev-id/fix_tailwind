@@ -13,10 +13,10 @@ return new class extends Migration
     {
         Schema::create('page_images', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('page_id')->constrained();
+            $table->foreignId('page_id')->constrained('pages')->cascadeOnDelete();
             $table->string('title')->nullable();
             $table->longText('image')->nullable();
-            $table->integer('is_active');
+            $table->integer('status');
             $table->timestamps();
         });
     }
