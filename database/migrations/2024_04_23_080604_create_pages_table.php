@@ -23,7 +23,7 @@ return new class extends Migration
             $table->longText('hero_image')->nullable();
 
             $table->string('button_label')->nullable();
-            $table->string('button_link')->nullable();
+            $table->string('button_value')->nullable();
 
             $table->string('meta_title')->nullable();
             $table->text('meta_description')->nullable();

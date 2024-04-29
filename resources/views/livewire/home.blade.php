@@ -141,7 +141,7 @@
                 <h2 class="sub-title">{{$accommodation->title}}</h2>
                 <div class="line"></div>
                 {{ $accommodation->excerpt }}
-                <a href="{{route($accommodation->button_link)}}" class="main-button">{{$accommodation->button_label}}</a>
+                <a href="{{route($accommodation->button_value)}}" class="main-button">{{$accommodation->button_label}}</a>
             </div>
         </div>
     </section>
