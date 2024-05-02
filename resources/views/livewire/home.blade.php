@@ -140,7 +140,7 @@
             <div class="vi-text">
                 <h2 class="sub-title">{{$accommodation->title}}</h2>
                 <div class="line"></div>
-                {{ $accommodation->excerpt }}
+                {{$accommodation->excerpt}}
                 <a href="{{route($accommodation->button_value)}}" class="main-button">{{$accommodation->button_label}}</a>
             </div>
         </div>

@@ -63,7 +63,7 @@ class PageResource extends Resource
                         Forms\Components\Section::make('Additional')
                             ->schema([
                                 Forms\Components\TextInput::make('button_label'),
-                                Forms\Components\TextInput::make('button_link'),
+                                Forms\Components\TextInput::make('button_value'),
                                 Forms\Components\Toggle::make('status')->label('Publish')->required(),
                             ])->collapsible(),
                     ])->columnSpan(1),

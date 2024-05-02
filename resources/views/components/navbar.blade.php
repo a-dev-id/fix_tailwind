@@ -33,8 +33,8 @@
     </div>
     <div class="nav-items">
         <a href="{{route('offers.index')}}" class="item" wire:navigate>offers</a>
-        <a href="{{route('accommodation.index')}}" class="item" wire:navigate>accommodation</a>
-        <a href="{{route('dining.index')}}" class="item" wire:navigate>dining</a>
+        <a href="{{route('accommodations.index')}}" class="item" wire:navigate>accommodation</a>
+        <a href="{{route('dinings.index')}}" class="item" wire:navigate>dinings</a>
         <a href="{{route('experiences.index')}}" class="item" wire:navigate>experiences</a>
         <a href="" class="item" wire:navigate>spa</a>
         <a href="" class="item" wire:navigate>honeymoon</a>

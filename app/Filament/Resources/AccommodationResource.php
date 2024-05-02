@@ -56,7 +56,8 @@ class AccommodationResource extends Resource
                     ->schema([
                         Forms\Components\Section::make('Image')
                             ->schema([
-                                Forms\Components\FileUpload::make('hero_image')->image()->directory('images/accommodation/hero_image')->hiddenLabel(),
+                                Forms\Components\FileUpload::make('hero_image')->image()->directory('images/accommodation/hero_image'),
+                                Forms\Components\FileUpload::make('cover_image')->image()->directory('images/accommodation/cover_image'),
                             ])->collapsible(),
                         Forms\Components\Section::make('Additional')
                             ->schema([
@@ -72,7 +73,9 @@ class AccommodationResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\ImageColumn::make('hero_image')->label('Image'),
+                Tables\Columns\TextColumn::make('id')->label('ID'),
+                Tables\Columns\ImageColumn::make('hero_image')->label('Hero Image'),
+                Tables\Columns\ImageColumn::make('cover_image')->label('Cover Image'),
                 Tables\Columns\TextColumn::make('title')->searchable()->sortable(),
                 Tables\Columns\ToggleColumn::make('status')->label('Publish')->sortable(),
                 Tables\Columns\TextColumn::make('created_at')->date()->sortable(),
@@ -94,7 +97,7 @@ class AccommodationResource extends Resource
     public static function getRelations(): array
     {
         return [
-            //
+            RelationManagers\ImagesRelationManager::class,
         ];
     }
 

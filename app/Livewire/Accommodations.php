@@ -10,9 +10,11 @@ class Accommodations extends Component
 {
     public function render()
     {
-        return view('livewire.accommodation', [
+        return view('livewire.accommodations', [
             'page' => Page::where('status', '1')->where('id', '3')->first(),
-            'data' => Accommodation::where('status', '1')->get(),
+            'villa_satu' => Accommodation::where('status', '1')->where('id', '1')->first(),
+            'villa_dua' => Accommodation::where('status', '1')->where('id', '2')->first(),
+            'villa_list' => Accommodation::where('status', '1')->whereNotIn('id', [1, 2])->get(),
         ]);
     }
 }

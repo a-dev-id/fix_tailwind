@@ -29,8 +29,8 @@ class ImagesRelationManager extends RelationManager
         return $table
             ->recordTitleAttribute('title')
             ->columns([
-                Tables\Columns\TextColumn::make('title'),
                 Tables\Columns\ImageColumn::make('image'),
+                Tables\Columns\TextColumn::make('title'),
                 Tables\Columns\ToggleColumn::make('status')->label('Publish')->sortable(),
                 Tables\Columns\TextColumn::make('created_at')->date(),
                 Tables\Columns\TextColumn::make('updated_at')->date(),
