@@ -21,7 +21,7 @@
             </div>
         </div>
         <div class="nav-middle">
-            <a href="{{route('index')}}" wire:navigate>
+            <a href="{{route('index')}}">
                 <img src="{{asset('images/placeholder/horizontal.webp')}}" data-src="https://hanginggardensofbali.com/images/logo/Logo-02-HGOB.png" class="lazy logo brightness-0 invert-[1]" alt="">
             </a>
         </div>
@@ -32,12 +32,12 @@
         </div>
     </div>
     <div class="nav-items">
-        <a href="{{route('offers.index')}}" class="item" wire:navigate>offers</a>
-        <a href="{{route('accommodations.index')}}" class="item" wire:navigate>accommodation</a>
-        <a href="{{route('dinings.index')}}" class="item" wire:navigate>dinings</a>
-        <a href="{{route('experiences.index')}}" class="item" wire:navigate>experiences</a>
-        <a href="" class="item" wire:navigate>spa</a>
-        <a href="" class="item" wire:navigate>honeymoon</a>
-        <a href="" class="item" wire:navigate>weddings</a>
+        <a href="{{route('offers.index')}}" class="item">offers</a>
+        <a href="{{route('accommodations.index')}}" class="item">accommodation</a>
+        <a href="{{route('restaurant.index')}}" class="item">restaurant</a>
+        <a href="{{route('experiences.index')}}" class="item">experiences</a>
+        <a href="" class="item">spa</a>
+        <a href="" class="item">honeymoon</a>
+        <a href="" class="item">weddings</a>
     </div>
 </nav>

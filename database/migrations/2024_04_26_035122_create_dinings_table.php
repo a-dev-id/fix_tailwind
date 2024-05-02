@@ -18,11 +18,8 @@ return new class extends Migration
             $table->string('slug')->nullable();
             $table->text('excerpt')->nullable();
             $table->longText('description')->nullable();
-            $table->longText('image')->nullable();
-            $table->string('price')->nullable();
-            $table->string('button_label')->nullable();
-            $table->string('button_value')->nullable();
-            $table->integer('featured')->nullable();
+            $table->longText('hero_image')->nullable();
+            $table->longText('cover_image')->nullable();
             $table->integer('status')->nullable();
             $table->timestamps();
         });

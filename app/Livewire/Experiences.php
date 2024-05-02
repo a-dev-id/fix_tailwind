@@ -12,7 +12,7 @@ class Experiences extends Component
     {
         return view('livewire.experiences', [
             'page' => Page::where('status', '1')->where('id', '5')->first(),
-            'experiences' => Experience::where('status', '1')->get(),
+            'experiences' => Experience::where('status', '1')->latest()->get(),
         ]);
     }
 }

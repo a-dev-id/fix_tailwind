@@ -42,7 +42,7 @@
 
 <main>
     {{-- page description section --}}
-    <section class="page-description" data-aos="fade-up" data-aos-delay="200">
+    <section class="page-description" data-aos="fade-up">
         <h1 class="main-title">{{$page->title}}</h1>
         <div class="mt-4 large:mt-3 wide:mt-4">{!! $page->description !!}</div>
     </section>

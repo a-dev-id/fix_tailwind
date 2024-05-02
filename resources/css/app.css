@@ -204,19 +204,19 @@
 
 @layer components {
     .vi-section {
-        @apply mx-auto flex w-4/6 overflow-hidden;
+        @apply mx-auto flex w-8/12 overflow-hidden;
     }
 }
 
 @layer components {
     .vi-image {
-        @apply h-[500px] w-[800px] object-cover large:h-[420px] large:w-[550px] wide:h-[500px] wide:w-[800px];
+        @apply h-auto w-[800px] object-cover large:h-[420px] large:w-[550px] wide:h-auto wide:w-[800px];
     }
 }
 
 @layer components {
     .vi-text {
-        @apply mx-8 flex flex-col justify-center border-y border-gray-600 p-5 text-center large:mx-8 wide:mx-16;
+        @apply mx-8 flex flex-col justify-center border-y border-gray-600 p-5 text-center large:mx-8 wide:mx-5;
     }
 }
 

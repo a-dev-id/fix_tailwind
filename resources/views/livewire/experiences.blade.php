@@ -15,10 +15,23 @@
 <link href="{{ url()->full() }}" rel="canonical">
 @endsection
 
+@push('css')
+<style>
+    ul {
+        list-style-type: disc;
+    }
+
+    li {
+        margin-left: 20px
+    }
+
+</style>
+@endpush
+
 @section('header')
 <header class="slick-carousel shadow-xl">
     @foreach ($page->images as $data)
-    <div>
+    <div wire:key="{{ $data->id }}">
         <div class="h-screen">
             <img src="{{asset('images/placeholder/horizontal.webp')}}" data-src="{{asset('storage/'.$data->image)}}" class="lazy w-full h-full object-cover" alt="Image 2">
         </div>
@@ -29,35 +42,35 @@
 
 <main>
     {{-- page description section --}}
-    <section class="page-description" data-aos="fade-up" data-aos-delay="200">
+    <section class="page-description" data-aos="fade-up">
         <h1 class="main-title">{{$page->title}}</h1>
         <div class="mt-4 large:mt-3 wide:mt-4">
             {!!$page->description!!}
         </div>
     </section>
 
-    <section class="visual-insights">
+    @foreach ($experiences as $data)
+    <section class="visual-insights {{$loop->iteration%2 == 1 ? '' : 'bg-white mt-3'}}" wire:key="{{ $data->id }}">
         <div class="vi-section" data-aos="fade-up" data-aos-delay="200">
-            <img class="lazy vi-image" src="{{asset('images/placeholder/horizontal.webp')}}" data-src="https://hanginggardensofbali.com/storage/aJvmNQ79c5vf4I6qwiEEInTwmGLboy-metadWx0aW1hdGUgbWlsaW9uYWlyZSBoYW5nb3V0LmpwZw==-.jpg" alt="Placeholder Image">
-            <div class="vi-text">
-                <h2 class="sub-title">Ultimate Millionaire Hangout</h2>
+            <img class="lazy vi-image {{$loop->iteration%2 == 1 ? 'large:order-1' : 'large:order-2'}}" src="{{asset('images/placeholder/horizontal.webp')}}" data-src="{{asset('storage/'.$data->image)}}" alt="Placeholder Image">
+            <div class="vi-text border-none {{$loop->iteration%2 == 1 ? 'large:order-2' : 'large:order-1'}}">
+                <h2 class="sub-title">{{$data->title}}</h2>
                 <div class="line"></div>
-                <p>Experience a day of pure indulgence and immerse yourself in a million-dollar view with our resort's exclusive daily pass.</p>
-                <a href="" class="main-button">Explore</a>
-            </div>
-        </div>
-    </section>
+                <div class="text-left">
+                    {!!$data->description!!}
+                </div>
+                <div class="flex mt-10 py-5 border-y border-gray-600 px-5">
+                    <div class="text-left">
+                        <div>Start from</div>
+                        <div class="text-xl">{{$data->price}}</div>
+                        <div>{{$data->per}}</div>
+                    </div>
+                    <a href="" class="main-button my-auto me-0">Inquire now</a>
+                </div>
 
-    <section class="visual-insights bg-white mt-3">
-        <div class="vi-section" data-aos="fade-up" data-aos-delay="200">
-            <div class="vi-text">
-                <h2 class="sub-title">Millionaire Day Pass</h2>
-                <div class="line"></div>
-                <p>Book a daycation at the iconic Hanging Gardens of Bali, we offer a Day-Pass available to everyone wishing to relax at our jungle resort.</p>
-                <a href="" class="main-button">Explore</a>
             </div>
-            <img class="lazy vi-image" src="{{asset('images/placeholder/horizontal.webp')}}" data-src="https://hanginggardensofbali.com/storage/mbee3l1VhzkPm4z71JRcQkvjr8lSZX-metabWlsaW9uYWlyZSBkYXkgcGFzcy5qcGc=-.jpg" alt="Placeholder Image">
         </div>
     </section>
+    @endforeach
 
 </main>
