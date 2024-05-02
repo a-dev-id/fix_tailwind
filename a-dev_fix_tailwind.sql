@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: May 02, 2024 at 11:04 AM
+-- Generation Time: May 02, 2024 at 01:57 PM
 -- Server version: 8.2.0
--- PHP Version: 8.2.13
+-- PHP Version: 8.3.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `fix_tailwind`
+-- Database: `a-dev_fix_tailwind`
 --
 
 -- --------------------------------------------------------
@@ -142,8 +142,10 @@ CREATE TABLE IF NOT EXISTS `cache` (
 --
 
 INSERT INTO `cache` (`key`, `value`, `expiration`) VALUES
-('356a192b7913b04c54574d18c28d46e6395428ab:timer', 'i:1714634772;', 1714634772),
-('356a192b7913b04c54574d18c28d46e6395428ab', 'i:3;', 1714634772);
+('356a192b7913b04c54574d18c28d46e6395428ab:timer', 'i:1714657264;', 1714657264),
+('356a192b7913b04c54574d18c28d46e6395428ab', 'i:2;', 1714657264),
+('a17961fa74e9275d529f489537f179c05d50c2f3:timer', 'i:1714650500;', 1714650501),
+('a17961fa74e9275d529f489537f179c05d50c2f3', 'i:1;', 1714650501);
 
 -- --------------------------------------------------------
 
@@ -193,16 +195,21 @@ CREATE TABLE IF NOT EXISTS `dinings` (
   `slug` varchar(191) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `excerpt` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
   `description` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `image` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `price` varchar(191) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `button_label` varchar(191) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `button_value` varchar(191) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `featured` int DEFAULT NULL,
+  `hero_image` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `cover_image` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
   `status` int DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `dinings`
+--
+
+INSERT INTO `dinings` (`id`, `title`, `subtitle`, `slug`, `excerpt`, `description`, `hero_image`, `cover_image`, `status`, `created_at`, `updated_at`) VALUES
+(1, 'Lounge & Bar', NULL, 'lounge-bar', NULL, '<p>The lounge features a luxurious bar, stocked with an impressive collection of premium spirits, exotic cocktails, and vintage wines. Our expert bartenders are skilled in the art of mixology and ready to craft the perfect drink to suit your mood.</p>', 'images/dinings/01HWWQMWDV51E432984YWRCSGG.jpg', 'images/dinings/cover_image/01HWWR1MEJ1NCH6N01M6FR7C7N.jpg', 1, '2024-05-02 05:24:36', '2024-05-02 05:31:34'),
+(2, 'Breakfast', NULL, 'breakfast', NULL, '<p>Start your day off right with a visit to Sunrise Delights, the ideal spot for breakfast enthusiasts seeking a blend of comfort and gourmet culinary experiences.</p>', 'images/dinings/hero_image/01HWWRJS2PNT7477Y36BEBT9E6.jpg', 'images/dinings/cover_image/01HWWRJS2RDA24487TCT6BVBAJ.jpg', 1, '2024-05-02 05:40:56', '2024-05-02 05:40:56');
 
 -- --------------------------------------------------------
 
@@ -239,7 +246,7 @@ CREATE TABLE IF NOT EXISTS `experiences` (
   `description` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
   `image` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
   `price` varchar(191) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `per` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `per` varchar(191) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `button_label` varchar(191) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `button_value` varchar(191) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `featured` int DEFAULT NULL,
@@ -558,7 +565,7 @@ INSERT INTO `pages` (`id`, `page_name`, `title`, `slug`, `subtitle`, `excerpt`, 
 (1, 'Homepage', 'Hanging Gardens of Bali', 'hanging-gardens-of-bali', NULL, NULL, '<p>Experience a gastronomic adventure that is without equal in Bali with legendary service that is the essence of Balinese hospitality. Dine while overlooking our spiritual core, \"The World\'s Best Swimming Pool\" so named by Conde Nast Traveler.</p>', 'images/page/hero_image/01HWM8WEJRJ7DTYWP5JB6M3WPY.jpg', NULL, NULL, 'Hanging Gardens, Bali Luxury Resort', 'Experience an adventure that is without equal in Bali while overlooking our spiritual core, \"The World\'s Best Swimming Pool\" so named by Conde Nast Traveler.', 1, '2024-04-28 22:32:40', '2024-04-29 05:37:14'),
 (2, 'Offers', 'Exclusive Offers', 'exclusive-offers', NULL, NULL, '<p>Take advantage of the latest deals and packages from Hanging Gardens of Bali Special Offers. This includes accommodation, dining, and activities packages. Only for direct booking in our official website.</p>', 'images/page/hero_image/01HWMB9DY8RFXKX9MEFB7WBVXJ.jpg', NULL, NULL, 'Exclusive Offers', 'Take advantage of the latest deals and packages from Hanging Gardens of Bali Special Offers. This includes accommodation, dining, and activities packages.', 1, '2024-04-29 06:14:43', '2024-04-29 06:14:43'),
 (3, 'Accommodation', 'Luxury Resort With Private Pool', 'luxury-resort-with-private-pool', NULL, 'Hanging Gardens of Bali has 44 luxury villas with private pools that represent Bali\'s natural and calm beauty.', '<p>Hanging Gardens of Bali has 44 luxury villas with private pools that represent Bali\'s natural and calm beauty. All of our villas exude a feeling of understated elegance, with trademark hand-crafted furnishings, exotic textiles, open-air dining rooms and a stunning master bathroom.</p>', 'images/page/hero_image/01HWMBJSXWFMJYBM7K501A0JSV.jpg', 'Discover Luxurious Retreats', 'accommodations.index', 'Luxury Resort With Private Pool', 'Our resort has 44 luxury villas with private pools that represent Bali\'s natural and calm beauty. All of our villas exude a feeling of understated elegance', 1, '2024-04-29 06:19:50', '2024-04-30 02:06:42'),
-(4, 'Dining', 'Three Elements Restaurant', 'three-elements-restaurant', NULL, NULL, '<p>Three Elements Restaurant has been awarded \"World Luxury Restaurant Award 2019\", and offers an à la carte selection of appetizers, entrées and desserts as well as two unique tasting menus with optional wine pairing using the highest quality products and impeccable technique to create a modern Western and Indonesian cuisine.</p>', 'images/page/hero_image/01HWMBVK698BJQ6QPJ029KT4CK.jpg', NULL, NULL, 'Three Elements Restaurant', 'Three Elements Restaurant has been awarded \"World Luxury Restaurant Award 2019\", and offers an à la carte selection of appetizers, entrées and desserts.', 1, '2024-04-29 06:24:38', '2024-04-29 06:24:38'),
+(4, 'Restaurant', 'Three Elements Restaurant', 'three-elements-restaurant', NULL, NULL, '<p>Three Elements Restaurant has been awarded \"World Luxury Restaurant Award 2019\", and offers an à la carte selection of appetizers, entrées and desserts as well as two unique tasting menus with optional wine pairing using the highest quality products and impeccable technique to create a modern Western and Indonesian cuisine.</p>', 'images/page/hero_image/01HWMBVK698BJQ6QPJ029KT4CK.jpg', NULL, NULL, 'Three Elements Restaurant', 'Three Elements Restaurant has been awarded \"World Luxury Restaurant Award 2019\", and offers an à la carte selection of appetizers, entrées and desserts.', 1, '2024-04-29 06:24:38', '2024-05-02 04:36:43'),
 (5, 'Experiences', 'Unique Experiences', 'unique-experiences', NULL, NULL, '<p>Serene surroundings, legendary service and top Balinese hospitality - a stay at Ubud luxury resort Hanging Gardens of Bali and its Once-in-a-Lifetime Experiences, promise to create special memories that you will never forget.</p>', 'images/page/hero_image/01HWMC1GN3QCS39B28FWJ779D5.jpg', NULL, NULL, 'Unique Experiences', 'Serene surroundings, legendary service and top Balinese hospitality - a stay at Hanging Gardens of Bali and its Once-in-a-Lifetime Experiences', 1, '2024-04-29 06:27:52', '2024-04-29 06:27:52'),
 (6, 'Spa', 'Ultimate Spa Relaxation', 'ultimate-spa-relaxation', NULL, NULL, '<p>Not only recognized as the best Ubud honeymoon resort, but also elected by \"World Luxury Spa Awards\" as The Best “LUXURY DESTINATION SPA\" our truly luxurious Spa Collection combines natural, local ingredients and ancient techniques, to create beauty therapies and treatments that soothe the mind, rejuvenate the body and energize the soul.</p>', 'images/page/hero_image/01HWMCA6MBXTA74P0JYE7B3FYK.jpg', NULL, NULL, 'Ultimate Spa Relaxation', 'Not only recognized as the best Ubud honeymoon resort, but also elected by \"World Luxury Spa Awards\" as The Best “LUXURY DESTINATION SPA\"', 1, '2024-04-29 06:32:37', '2024-04-29 06:32:37'),
 (7, 'Honeymoon', 'Perfect Honeymoon Destinations', 'perfect-honeymoon-destinations', NULL, NULL, '<p>Whether it\'s Valentine\'s Day, a honeymoon or just a romantic getaway for two, Hanging Gardens of Bali is one of the best romantic getaway spot for your unforgetable and memorable experiences.</p>', 'images/page/hero_image/01HWMCEB63175MWJMQFEMQZENG.jpg', NULL, NULL, 'Perfect Honeymoon Destinations', 'Whether it\'s Valentine\'s Day, a honeymoon or just a romantic getaway for two, Hanging Gardens of Bali is one of the best romantic getaway', 1, '2024-04-29 06:34:52', '2024-04-29 06:34:52'),
@@ -682,7 +689,7 @@ CREATE TABLE IF NOT EXISTS `sessions` (
 --
 
 INSERT INTO `sessions` (`id`, `user_id`, `ip_address`, `user_agent`, `payload`, `last_activity`) VALUES
-('23qzDDKZnEUICHBK2aQNKhjTY9AXe3zDY7KYObhW', 1, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36', 'YTo2OntzOjY6Il90b2tlbiI7czo0MDoib3IwSlRjVG55Y29IQWdldE1IMFRJVVJrRGliM2c4R0xYUlZFUGh5SiI7czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MzM6Imh0dHA6Ly9sb2NhbGhvc3Q6ODAwMC9leHBlcmllbmNlcyI7fXM6NTA6ImxvZ2luX3dlYl81OWJhMzZhZGRjMmIyZjk0MDE1ODBmMDE0YzdmNThlYTRlMzA5ODlkIjtpOjE7czoxNzoicGFzc3dvcmRfaGFzaF93ZWIiO3M6NjA6IiQyeSQxMiRzYVBEcFBmRWRKa1BTcE0yRTcyaVFlcVdjR2dmOVk3Tm1COHNKQjJ1aU8yQzJxcXJodHBreSI7czo4OiJmaWxhbWVudCI7YTowOnt9fQ==', 1714637788);
+('KP70blUOAtHaAUsjL69y9m1wdgD8uYnNhclUG1Ng', 1, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36', 'YTo2OntzOjY6Il90b2tlbiI7czo0MDoicUI5NzBCeXRVMEY0c3ZjVXpUV1VZSWdGUlM2dWxacjdVRW1tSTUwNCI7czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MzI6Imh0dHA6Ly9sb2NhbGhvc3Q6ODAwMC9yZXN0YXVyYW50Ijt9czo1MDoibG9naW5fd2ViXzU5YmEzNmFkZGMyYjJmOTQwMTU4MGYwMTRjN2Y1OGVhNGUzMDk4OWQiO2k6MTtzOjE3OiJwYXNzd29yZF9oYXNoX3dlYiI7czo2MDoiJDJ5JDEyJHNhUERwUGZFZEprUFNwTTJFNzJpUWVxV2NHZ2Y5WTdObUI4c0pCMnVpTzJDMnFxcmh0cGt5IjtzOjg6ImZpbGFtZW50IjthOjA6e319', 1714658237);
 
 -- --------------------------------------------------------
 
