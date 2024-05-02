@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Apr 29, 2024 at 02:56 PM
+-- Generation Time: May 02, 2024 at 11:04 AM
 -- Server version: 8.2.0
--- PHP Version: 8.3.1
+-- PHP Version: 8.2.13
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `a-dev_fix_tailwind`
+-- Database: `fix_tailwind`
 --
 
 -- --------------------------------------------------------
@@ -46,7 +46,18 @@ CREATE TABLE IF NOT EXISTS `accommodations` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `accommodations`
+--
+
+INSERT INTO `accommodations` (`id`, `title`, `subtitle`, `slug`, `excerpt`, `description`, `hero_image`, `cover_image`, `button_label`, `button_value`, `meta_title`, `meta_description`, `featured`, `status`, `created_at`, `updated_at`) VALUES
+(1, 'Hanging Gardens Pool Villa', 'Breathtaking Views', 'hanging-gardens-pool-villa', 'The Hanging Gardens Pool Villa offers breathtaking views over the rainforest, provides a sense of peace and tranquility and offers a high level of privacy and exclusivity.', '<p>The Hanging Gardens Pool Villa offers breathtaking views over the rainforest, provides a sense of peace and tranquility and offers a high level of privacy and exclusivity. The additional spacious living area sets the luxurious standards. Designed in contemporary Balinese style, each unit has an ample terrace adjacent to the infinity pool. The king-sized bedrooms are furnished with locally-spun silks and natural cottons that combine design and comfort. The Hanging Gardens Villa features a separate living room with an entertainment system, a comfy resting space and a separate bathroom for visitors to relax and enjoy.&nbsp;</p>', 'images/accommodation/hero_image/01HWPGRMNBZF2ZZP72GXM2S40P.jpg', 'images/accommodation/cover_image/01HWPGRMNJEKRK3PN6GDTVZ0MM.jpg', 'Explore', NULL, 'Hanging Gardens Pool Villa', 'The Hanging Gardens Pool Villa offers breathtaking views over the rainforest, provides a sense of peace and offers a high level of privacy and exclusivity.', NULL, 1, '2024-04-30 02:28:53', '2024-04-30 02:47:19'),
+(2, 'Royal Spa Suite', NULL, 'royal-spa-suite', 'The Spa Suite has a huge spa lounge, a large bathroom with a sleek and spacious bathtub, premium linen and floor-to-ceiling glass windows.', '<p>The Spa Suite has a huge spa lounge, a large bathroom with a sleek and spacious bathtub, premium linen and floor-to-ceiling glass windows. From your private balcony, take in the stunning views of the Ubud forest preserve, the Ayung River, and the beautiful tropical gardens from your intimate balcony.&nbsp;</p>', 'images/accommodation/hero_image/01HWPS68NKWQHAE7MN6RGYDT5C.jpg', 'images/accommodation/cover_image/01HWPS68NQ4DVN2XFTFR9CXYS1.webp', 'Explore', NULL, 'Royal Spa Suite', 'The Spa Suite has a huge spa lounge, a large bathroom with a sleek and spacious bathtub, premium linen and floor-to-ceiling glass windows.', NULL, 1, '2024-04-30 04:56:08', '2024-04-30 04:56:08'),
+(3, 'Riverside Pool Villa', NULL, 'riverside-pool-villa', 'These luxurious pool villas take full advantage of the peace and the serenity of the surrounding lush jungle, combined with the rhythmic sound of Ayung river and its cascading waterfalls below.', '<p>These luxurious pool villas take full advantage of the peace and the serenity of the surrounding lush jungle, combined with the rhythmic sound of Ayung river and its cascading waterfalls below. Designed in an authentic Balinese style, the Riverside Pool Villas are perched high on wooden pillars in a traditional Balinese manner and are completely linked with nature. Their expansive decks feature a private infinity pool, poolside gazebo and dining table, making them the ideal spot to relax and take in the sights and sounds of the surrounding rainforest.&nbsp;</p>', 'images/accommodation/hero_image/01HWPW766YM3TYFVGRNQNZ6JE2.webp', NULL, 'Explore', NULL, 'Riverside Pool Villa', 'These luxurious pool villas take full advantage of the peace and the serenity of the surrounding lush jungle, combined with the rhythmic sound of Ayung river', NULL, 1, '2024-04-30 05:49:04', '2024-04-30 05:52:35'),
+(4, 'Panoramic Pool Villa', NULL, 'panoramic-pool-villa', 'Set amongst the hotel’s terraced gardens with the panoramic views of the valley, the let you hide away in total privacy and are designed to offer guests a sense of seclusion and tranquillity, allowing them to immerse themselves in the natural beauty of the Ayung River Valley. ', '<p>Set amongst the hotel’s terraced gardens with the panoramic views of the valley, the let you hide away in total privacy and are designed to offer guests a sense of seclusion and tranquillity, allowing them to immerse themselves in the natural beauty of the Ayung River Valley. A large terrace makes the perfect relaxation spot and space to embrace nature, while floor-to-ceiling windows allow the tranquil jungle atmosphere to flow into the room. The private infinity pools often overlook the lush landscape, providing a breathtaking and immersive experience.&nbsp;</p>', 'images/accommodation/hero_image/01HWPW9YB7QE8VT6R3793TPC55.webp', NULL, 'Explore', NULL, 'Panoramic Pool Villa', 'Set amongst the hotel’s terraced gardens with the panoramic views of the valley, the let you hide away in total privacy', NULL, 1, '2024-04-30 05:50:34', '2024-04-30 05:52:41'),
+(5, 'Family Pool Villa', NULL, 'family-pool-villa', 'Specially designed to accommodate families, these villas feature two luxurious bedrooms and two spacious bathrooms. The upper level includes a master bedroom, an indoor/outdoor bathroom, large terrace, infinity pool and a poolside gazebo. ', '<p>Specially designed to accommodate families, these villas feature two luxurious bedrooms and two spacious bathrooms. The upper level includes a master bedroom, an indoor/outdoor bathroom, large terrace, infinity pool and a poolside gazebo. A second bedroom is located on the lower level, along with an additional bathroom and a further terrace with sunbeds.<br><br>With floor to ceiling windows on both floors, these villas offer guests spectacular views across the valley. These villas include spacious living areas and a private pool with spectacular views across the valley. Family Pool Villas aim to provide a comfortable and enjoyable stay for families, allowing them to relax and spend quality time together in a luxurious and scenic setting.&nbsp;</p>', 'images/accommodation/hero_image/01HWPWC4ZP8X76ZTV1T7TDQFHJ.jpg', NULL, 'Explore', NULL, 'Family Pool Villa', 'Specially designed to accommodate families, these villas feature two luxurious bedrooms and two spacious bathrooms.', NULL, 1, '2024-04-30 05:51:47', '2024-04-30 05:52:44');
 
 -- --------------------------------------------------------
 
@@ -131,8 +142,8 @@ CREATE TABLE IF NOT EXISTS `cache` (
 --
 
 INSERT INTO `cache` (`key`, `value`, `expiration`) VALUES
-('356a192b7913b04c54574d18c28d46e6395428ab:timer', 'i:1714401897;', 1714401897),
-('356a192b7913b04c54574d18c28d46e6395428ab', 'i:1;', 1714401897);
+('356a192b7913b04c54574d18c28d46e6395428ab:timer', 'i:1714634772;', 1714634772),
+('356a192b7913b04c54574d18c28d46e6395428ab', 'i:3;', 1714634772);
 
 -- --------------------------------------------------------
 
@@ -228,6 +239,7 @@ CREATE TABLE IF NOT EXISTS `experiences` (
   `description` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
   `image` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
   `price` varchar(191) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `per` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `button_label` varchar(191) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `button_value` varchar(191) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `featured` int DEFAULT NULL,
@@ -235,7 +247,16 @@ CREATE TABLE IF NOT EXISTS `experiences` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `experiences`
+--
+
+INSERT INTO `experiences` (`id`, `title`, `subtitle`, `slug`, `excerpt`, `description`, `image`, `price`, `per`, `button_label`, `button_value`, `featured`, `status`, `created_at`, `updated_at`) VALUES
+(1, 'VIP Butler', NULL, 'vip-butler', NULL, '<p>Enhance your stay at Hanging Gardens of Bali with our private VIP Butler who will assist you to your every need. Our VIP Butler will ensure a personalized luxury stay experience. They will assist you from check-in to check-out, preparing coffee and/or tea, prepare your bath, scheduling entertainment, arranging transportation and even be your private concierge to help you plan your day-to-day activities during your stay.</p><p><strong>Terms &amp; Conditions:</strong></p><ul><li>Advance reservation is required and butler is subject to availability</li><li>Butler service is 16 hours from 7am to 11pm daily</li><li>Full payment will be required at time of reservation</li><li>Cancellation or schedule changes can be made 24 hours prior to the reserved day</li></ul>', 'images/experiences/01HWW2KZ0APME3DWJW1189HDAG.jpg', 'IDR 3,000,000++', 'Per 6 hours', NULL, NULL, 0, 1, '2024-05-02 06:17:06', '2024-05-02 06:17:06'),
+(2, 'VIP Airport Transfer', NULL, 'vip-airport-transfer', NULL, '<p>Begin your luxury experience with our designated VIP airport transfer from Ngurah Rai International Airport direct to mystical Ubud jungle where Hanging Gardens of Bali resides. The VIP transfer is inclusive of designated butler, baggage assistance, towels and refreshment. iPad and wi-fi is available in the vehicle as well as pre-arrival check-in.</p><p><strong>Terms &amp; Conditions:</strong></p><ul><li>Advance reservation is required and is subject to availability</li><li>Full payment will be required at time of reservation</li><li>Cancellation or schedule changes can be made 24 hours prior to the reserved day</li><li>Cancellation or schedule changes within 24 hours of reserved date will incur 100% cancelation fee</li></ul>', 'images/experiences/01HWW2P3Q37MFE5EX4ZHRHKB7H.webp', 'IDR 4,200,000++', 'Per car / one way', NULL, NULL, 0, 1, '2024-05-02 06:18:17', '2024-05-02 06:18:17'),
+(3, 'The Morning Walk', NULL, 'the-morning-walk', NULL, '<p>A walk across rice paddies and river valleys to explore the Balinese medicinal plants along the way, will enhance your visit to the local villages, led by our experienced holiday guide.<br>Explore the rural lifestyle of our neighbouring village and discover fascinating aspects of day-to-day life.<br>Experience the locals\' health practices using indigenous plants, herbal remedies, roots, fruits, and vegetables, while you recharge with a refreshing drink amid the rice fields.</p>', 'images/experiences/01HWW2QTPC0BP14BSPK51T52E4.webp', 'IDR 240,000++', 'Per person', NULL, NULL, 0, 1, '2024-05-02 06:19:13', '2024-05-02 06:19:13');
 
 -- --------------------------------------------------------
 
@@ -536,7 +557,7 @@ CREATE TABLE IF NOT EXISTS `pages` (
 INSERT INTO `pages` (`id`, `page_name`, `title`, `slug`, `subtitle`, `excerpt`, `description`, `hero_image`, `button_label`, `button_value`, `meta_title`, `meta_description`, `status`, `created_at`, `updated_at`) VALUES
 (1, 'Homepage', 'Hanging Gardens of Bali', 'hanging-gardens-of-bali', NULL, NULL, '<p>Experience a gastronomic adventure that is without equal in Bali with legendary service that is the essence of Balinese hospitality. Dine while overlooking our spiritual core, \"The World\'s Best Swimming Pool\" so named by Conde Nast Traveler.</p>', 'images/page/hero_image/01HWM8WEJRJ7DTYWP5JB6M3WPY.jpg', NULL, NULL, 'Hanging Gardens, Bali Luxury Resort', 'Experience an adventure that is without equal in Bali while overlooking our spiritual core, \"The World\'s Best Swimming Pool\" so named by Conde Nast Traveler.', 1, '2024-04-28 22:32:40', '2024-04-29 05:37:14'),
 (2, 'Offers', 'Exclusive Offers', 'exclusive-offers', NULL, NULL, '<p>Take advantage of the latest deals and packages from Hanging Gardens of Bali Special Offers. This includes accommodation, dining, and activities packages. Only for direct booking in our official website.</p>', 'images/page/hero_image/01HWMB9DY8RFXKX9MEFB7WBVXJ.jpg', NULL, NULL, 'Exclusive Offers', 'Take advantage of the latest deals and packages from Hanging Gardens of Bali Special Offers. This includes accommodation, dining, and activities packages.', 1, '2024-04-29 06:14:43', '2024-04-29 06:14:43'),
-(3, 'Accommodation', 'Luxury Resort With Private Pool', 'luxury-resort-with-private-pool', NULL, 'Hanging Gardens of Bali has 44 luxury villas with private pools that represent Bali\'s natural and calm beauty.', '<p>Hanging Gardens of Bali has 44 luxury villas with private pools that represent Bali\'s natural and calm beauty. All of our villas exude a feeling of understated elegance, with trademark hand-crafted furnishings, exotic textiles, open-air dining rooms and a stunning master bathroom.</p>', 'images/page/hero_image/01HWMBJSXWFMJYBM7K501A0JSV.jpg', 'Discover Luxurious Retreats', 'accommodation.index', 'Luxury Resort With Private Pool', 'Our resort has 44 luxury villas with private pools that represent Bali\'s natural and calm beauty. All of our villas exude a feeling of understated elegance', 1, '2024-04-29 06:19:50', '2024-04-29 08:27:27'),
+(3, 'Accommodation', 'Luxury Resort With Private Pool', 'luxury-resort-with-private-pool', NULL, 'Hanging Gardens of Bali has 44 luxury villas with private pools that represent Bali\'s natural and calm beauty.', '<p>Hanging Gardens of Bali has 44 luxury villas with private pools that represent Bali\'s natural and calm beauty. All of our villas exude a feeling of understated elegance, with trademark hand-crafted furnishings, exotic textiles, open-air dining rooms and a stunning master bathroom.</p>', 'images/page/hero_image/01HWMBJSXWFMJYBM7K501A0JSV.jpg', 'Discover Luxurious Retreats', 'accommodations.index', 'Luxury Resort With Private Pool', 'Our resort has 44 luxury villas with private pools that represent Bali\'s natural and calm beauty. All of our villas exude a feeling of understated elegance', 1, '2024-04-29 06:19:50', '2024-04-30 02:06:42'),
 (4, 'Dining', 'Three Elements Restaurant', 'three-elements-restaurant', NULL, NULL, '<p>Three Elements Restaurant has been awarded \"World Luxury Restaurant Award 2019\", and offers an à la carte selection of appetizers, entrées and desserts as well as two unique tasting menus with optional wine pairing using the highest quality products and impeccable technique to create a modern Western and Indonesian cuisine.</p>', 'images/page/hero_image/01HWMBVK698BJQ6QPJ029KT4CK.jpg', NULL, NULL, 'Three Elements Restaurant', 'Three Elements Restaurant has been awarded \"World Luxury Restaurant Award 2019\", and offers an à la carte selection of appetizers, entrées and desserts.', 1, '2024-04-29 06:24:38', '2024-04-29 06:24:38'),
 (5, 'Experiences', 'Unique Experiences', 'unique-experiences', NULL, NULL, '<p>Serene surroundings, legendary service and top Balinese hospitality - a stay at Ubud luxury resort Hanging Gardens of Bali and its Once-in-a-Lifetime Experiences, promise to create special memories that you will never forget.</p>', 'images/page/hero_image/01HWMC1GN3QCS39B28FWJ779D5.jpg', NULL, NULL, 'Unique Experiences', 'Serene surroundings, legendary service and top Balinese hospitality - a stay at Hanging Gardens of Bali and its Once-in-a-Lifetime Experiences', 1, '2024-04-29 06:27:52', '2024-04-29 06:27:52'),
 (6, 'Spa', 'Ultimate Spa Relaxation', 'ultimate-spa-relaxation', NULL, NULL, '<p>Not only recognized as the best Ubud honeymoon resort, but also elected by \"World Luxury Spa Awards\" as The Best “LUXURY DESTINATION SPA\" our truly luxurious Spa Collection combines natural, local ingredients and ancient techniques, to create beauty therapies and treatments that soothe the mind, rejuvenate the body and energize the soul.</p>', 'images/page/hero_image/01HWMCA6MBXTA74P0JYE7B3FYK.jpg', NULL, NULL, 'Ultimate Spa Relaxation', 'Not only recognized as the best Ubud honeymoon resort, but also elected by \"World Luxury Spa Awards\" as The Best “LUXURY DESTINATION SPA\"', 1, '2024-04-29 06:32:37', '2024-04-29 06:32:37'),
@@ -568,7 +589,17 @@ CREATE TABLE IF NOT EXISTS `page_images` (
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `page_images_page_id_foreign` (`page_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `page_images`
+--
+
+INSERT INTO `page_images` (`id`, `page_id`, `title`, `image`, `status`, `created_at`, `updated_at`) VALUES
+(1, 3, 'Luxury Resort With Private Pool', 'images/page/images/01HWPDMCKY5F07MBXK44Q104Q2.jpg', 1, '2024-04-30 01:34:08', '2024-04-30 01:34:25'),
+(2, 5, 'pool', 'images/page/images/01HWW335XSP8JZ5NNR55PS2XTQ.jpg', 1, '2024-05-02 06:25:25', '2024-05-02 06:25:25'),
+(3, 5, 'buttler', 'images/page/images/01HWW33N5HVRE5WDN6ZZBR93Z4.jpg', 1, '2024-05-02 06:25:40', '2024-05-02 06:25:40'),
+(4, 5, 'morning walk', 'images/page/images/01HWW344MCH8M4G9EGYTA6SDTS.webp', 1, '2024-05-02 06:25:56', '2024-05-02 06:25:56');
 
 -- --------------------------------------------------------
 
@@ -651,7 +682,7 @@ CREATE TABLE IF NOT EXISTS `sessions` (
 --
 
 INSERT INTO `sessions` (`id`, `user_id`, `ip_address`, `user_agent`, `payload`, `last_activity`) VALUES
-('S6Wlo39CLliEqx4lkbH6SzOSXGiT0WA7RMUiJFJ4', 1, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36', 'YTo3OntzOjY6Il90b2tlbiI7czo0MDoiMkFGd1hGWVpGSTlnRHBaV2VEc2xaZHNic1F6d3VlY3BOWm9nT2NORyI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MzU6Imh0dHA6Ly9sb2NhbGhvc3Q6ODAwMC9hY2NvbW1vZGF0aW9uIjt9czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319czozOiJ1cmwiO2E6MDp7fXM6NTA6ImxvZ2luX3dlYl81OWJhMzZhZGRjMmIyZjk0MDE1ODBmMDE0YzdmNThlYTRlMzA5ODlkIjtpOjE7czoxNzoicGFzc3dvcmRfaGFzaF93ZWIiO3M6NjA6IiQyeSQxMiRzYVBEcFBmRWRKa1BTcE0yRTcyaVFlcVdjR2dmOVk3Tm1COHNKQjJ1aU8yQzJxcXJodHBreSI7czo4OiJmaWxhbWVudCI7YTowOnt9fQ==', 1714402536);
+('23qzDDKZnEUICHBK2aQNKhjTY9AXe3zDY7KYObhW', 1, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36', 'YTo2OntzOjY6Il90b2tlbiI7czo0MDoib3IwSlRjVG55Y29IQWdldE1IMFRJVVJrRGliM2c4R0xYUlZFUGh5SiI7czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MzM6Imh0dHA6Ly9sb2NhbGhvc3Q6ODAwMC9leHBlcmllbmNlcyI7fXM6NTA6ImxvZ2luX3dlYl81OWJhMzZhZGRjMmIyZjk0MDE1ODBmMDE0YzdmNThlYTRlMzA5ODlkIjtpOjE7czoxNzoicGFzc3dvcmRfaGFzaF93ZWIiO3M6NjA6IiQyeSQxMiRzYVBEcFBmRWRKa1BTcE0yRTcyaVFlcVdjR2dmOVk3Tm1COHNKQjJ1aU8yQzJxcXJodHBreSI7czo4OiJmaWxhbWVudCI7YTowOnt9fQ==', 1714637788);
 
 -- --------------------------------------------------------
 
