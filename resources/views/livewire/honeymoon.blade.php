@@ -22,7 +22,7 @@
     }
 
     li {
-        margin-left: 35px
+        margin-left: 20px
     }
 
 </style>
@@ -42,48 +42,15 @@
 
 <main>
     {{-- page description section --}}
-    <section class="page-description" data-aos="fade-up">
+    <section class="page-description mb-24" data-aos="fade-up">
         <h1 class="main-title">{{$page->title}}</h1>
         <div class="mt-4 large:mt-3 wide:mt-4">
             {!!$page->description!!}
         </div>
     </section>
 
-    <section class="bg-gray-200/50 mt-24">
-        <div class="w-8/12 mx-auto py-10">
-            <div class="grid grid-cols-3">
-                <div class="flex flex-col" data-aos="fade-up" data-aos-delay="200">
-                    <h3 class="footer-title text-xs tracking-wide font-bold">restaurant information</h3>
-                    <div class="font-bold mt-5">Cuisine:</div>
-                    <span>A taste of Rwanda</span>
-
-                    <div class="font-bold mt-5">Opening times:</div>
-                    <span>7:00am to 10:00pm</span>
-                    <span>High tea: 3:00pm to 4:00pm</span>
-                    <span>Apéritif: 6:30pm to 7:00pm</span>
-                </div>
-                <div class="flex flex-col" data-aos="fade-up" data-aos-delay="200">
-                    <h3 class="footer-title text-xs tracking-wide font-bold">additional information</h3>
-                    <div class="font-bold mt-5">Dress code:</div>
-                    <span>Smart resort wear</span>
-
-                    <div class="font-bold mt-5">Age restrictions:</div>
-                    <span>Guests must be aged over 10 years</span>
-                </div>
-                <div class="flex flex-col" data-aos="fade-up" data-aos-delay="200">
-                    <h3 class="footer-title text-xs tracking-wide font-bold">reservations</h3>
-                    <div class="font-bold mt-5">Contact Us:</div>
-                    <span>+250 221 011 111</span>
-
-                    <div class="font-bold mt-5">Email Us:</div>
-                    <span>reservations@oneandonlynyungwehouse.com</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    @foreach ($spas as $data)
-    <section class="visual-insights {{$loop->iteration%2 == 1 ? 'bg-white mt-3' : 'mt-3'}}" wire:key="{{ $data->id }}">
+    @foreach ($honeymoons as $data)
+    <section class="visual-insights {{$loop->iteration%2 == 1 ? 'mt-3' : 'bg-white mt-3'}}" wire:key="{{ $data->id }}">
         <div class="vi-section" data-aos="fade-up" data-aos-delay="200">
             <img class="lazy vi-image {{$loop->iteration%2 == 1 ? 'large:order-1' : 'large:order-2'}}" src="{{asset('images/placeholder/horizontal.webp')}}" data-src="{{asset('storage/'.$data->image)}}" alt="Placeholder Image">
             <div class="vi-text border-none {{$loop->iteration%2 == 1 ? 'large:order-2' : 'large:order-1'}}">
@@ -93,9 +60,9 @@
                 </div>
                 <div class="flex mt-10 py-5 border-y border-gray-600 px-5">
                     <div class="text-left">
-                        <div>Start from</div>
+                        {{-- <div>Start from</div>
                         <div class="text-xl">{{$data->price}}</div>
-                        <div>{{$data->per}}</div>
+                        <div>{{$data->per}}</div> --}}
                     </div>
                     <a href="" class="main-button my-auto me-0">Inquire now</a>
                 </div>

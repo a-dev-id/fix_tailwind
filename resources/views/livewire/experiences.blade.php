@@ -42,7 +42,7 @@
 
 <main>
     {{-- page description section --}}
-    <section class="page-description" data-aos="fade-up">
+    <section class="page-description mb-24" data-aos="fade-up">
         <h1 class="main-title">{{$page->title}}</h1>
         <div class="mt-4 large:mt-3 wide:mt-4">
             {!!$page->description!!}
@@ -50,13 +50,12 @@
     </section>
 
     @foreach ($experiences as $data)
-    <section class="visual-insights {{$loop->iteration%2 == 1 ? '' : 'bg-white mt-3'}}" wire:key="{{ $data->id }}">
+    <section class="visual-insights {{$loop->iteration%2 == 1 ? 'mt-3' : 'bg-white mt-3'}}" wire:key="{{ $data->id }}">
         <div class="vi-section" data-aos="fade-up" data-aos-delay="200">
             <img class="lazy vi-image {{$loop->iteration%2 == 1 ? 'large:order-1' : 'large:order-2'}}" src="{{asset('images/placeholder/horizontal.webp')}}" data-src="{{asset('storage/'.$data->image)}}" alt="Placeholder Image">
             <div class="vi-text border-none {{$loop->iteration%2 == 1 ? 'large:order-2' : 'large:order-1'}}">
-                <h2 class="sub-title">{{$data->title}}</h2>
-                <div class="line"></div>
-                <div class="text-left">
+                <h2 class="sub-title text-left">{{$data->title}}</h2>
+                <div class="text-left border-t border-gray-600 pt-5 mt-5">
                     {!!$data->description!!}
                 </div>
                 <div class="flex mt-10 py-5 border-y border-gray-600 px-5">

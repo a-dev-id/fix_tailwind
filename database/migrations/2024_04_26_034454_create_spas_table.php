@@ -20,6 +20,7 @@ return new class extends Migration
             $table->longText('description')->nullable();
             $table->longText('image')->nullable();
             $table->string('price')->nullable();
+            $table->string('per')->nullable();
             $table->string('button_label')->nullable();
             $table->string('button_value')->nullable();
             $table->integer('featured')->nullable();
