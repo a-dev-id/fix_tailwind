@@ -251,8 +251,14 @@
 }
 
 @layer components {
-    .dp-l-image {
+    .dp-r-image {
         @apply h-[480px] w-full object-cover large:h-[350px] wide:h-[480px];
+    }
+}
+
+@layer components {
+    .dp-l-image {
+        @apply h-[770px] w-full object-cover large:h-[600px] wide:h-[770px];
     }
 }
 
@@ -270,7 +276,7 @@
 
 @layer components {
     .vh-section {
-        @apply absolute bottom-0 right-0 z-10 bg-white py-16 large:py-10 wide:py-16;
+        @apply absolute bottom-0 right-0 z-10 bg-white py-16 large:py-10 wide:py-20;
     }
 }
 

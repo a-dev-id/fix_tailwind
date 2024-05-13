@@ -136,12 +136,12 @@
     {{-- accommodation section --}}
     <section class="visual-insights">
         <div class="vi-section" data-aos="fade-up" data-aos-delay="200">
-            <img class="lazy vi-image" src="{{asset('images/placeholder/horizontal.webp')}}" data-src="{{asset('storage/'.$accommodation->hero_image)}}" alt="Placeholder Image">
+            <img class="lazy vi-image" src="{{asset('images/placeholder/horizontal.webp')}}" data-src="{{asset('storage/images/accommodation/hero_image/01HWPW9YB7QE8VT6R3793TPC55.webp')}}" alt="Placeholder Image">
             <div class="vi-text">
-                <h2 class="sub-title">{{$accommodation->title}}</h2>
+                <h2 class="sub-title">LUXURY RESORT WITH PRIVATE POOL</h2>
                 <div class="line"></div>
-                {{$accommodation->excerpt}}
-                <a href="{{route($accommodation->button_value)}}" class="main-button">{{$accommodation->button_label}}</a>
+                <p>Hanging Gardens of Bali has 44 luxury villas with private pools that represent Bali's natural and calm beauty.</p>
+                <a href="{{route('accommodations.index')}}" class="main-button">Discover luxurious restreats</a>
             </div>
         </div>
     </section>
@@ -153,16 +153,16 @@
                 <div class="pb-6">
                     <h2 class="sub-title">Unique Experiences</h2>
                 </div>
-                <img class="lazy w-full h-[770px] wide:h-[770px] large:h-[600px] object-cover" src="{{asset('images/placeholder/vertical.webp')}}" data-src="https://hanginggardensofbali.com/storage/tCzOXiSeWWwXZqpRMWchop4xYfkGUg-metaNjI5NDcyNDEzYTkxYzM4NDA4MDcwMy5qcGc=-.jpg" alt="Card Image">
+                <img class="lazy dp-l-image" src="{{asset('images/placeholder/vertical.webp')}}" data-src="https://hanginggardensofbali.com/storage/tCzOXiSeWWwXZqpRMWchop4xYfkGUg-metaNjI5NDcyNDEzYTkxYzM4NDA4MDcwMy5qcGc=-.jpg" alt="Card Image">
             </div>
             <div class="dp-right" data-aos="fade-up" data-aos-delay="400">
-                <img class="lazy dp-l-image" src="{{asset('images/placeholder/vertical.webp')}}" data-src="https://hanginggardensofbali.com/storage/aJvmNQ79c5vf4I6qwiEEInTwmGLboy-metadWx0aW1hdGUgbWlsaW9uYWlyZSBoYW5nb3V0LmpwZw==-.jpg" alt="Card Image">
+                <img class="lazy dp-r-image" src="{{asset('images/placeholder/vertical.webp')}}" data-src="https://hanginggardensofbali.com/storage/aJvmNQ79c5vf4I6qwiEEInTwmGLboy-metadWx0aW1hdGUgbWlsaW9uYWlyZSBoYW5nb3V0LmpwZw==-.jpg" alt="Card Image">
                 <div>
                     <h3 class="sub-title2">Ultimate Millionaire Hangout</h3>
                     <p class="paragraph">
                         Experience a day of pure indulgence and immerse yourself in a million-dollar view with our resort's exclusive daily pass.
                     </p>
-                    <a href="" class="main-button ms-1">Discover Exclusive Adventures</a>
+                    <a href="{{route('experiences.index')}}" class="main-button ms-1">Discover Exclusive Adventures</a>
                 </div>
             </div>
         </div>
@@ -179,7 +179,7 @@
                     <p class="paragraph">
                         Certainly one of the best Bali fine dining restaurants. Embark on a one-of-a-kind culinary journey through the ingredients, the flavors and the seasons of Bali.
                     </p>
-                    <a href="" class="main-button">Discover Culinary Delights</a>
+                    <a href="{{route('restaurant.index')}}" class="main-button">Discover Culinary Delights</a>
                 </div>
                 <img class="lazy vh-image" src="{{asset('images/placeholder/horizontal.webp')}}" data-src="https://hanginggardensofbali.com/storage/42B6homWwTmZCXNefSI3z5mRO9IHTl-metaNjI5NDc5MzE5N2I4ZjUxNDY2ODgyMy5qcGc=-.jpg" alt="Placeholder Image">
             </div>
@@ -194,7 +194,7 @@
                 <p class="paragraph">
                     Not only recognized as the best Ubud honeymoon resort, but also elected by "World Luxury Spa Awards" as The Best "LUXURY DESTINATION SPA" our truly luxurious Spa Collection combines natural, local ingredients and ancient techniques, to create beauty therapies and treatments that soothe the mind, rejuvenate the body and energize the soul.
                 </p>
-                <a href="" class="main-button">Exquisite Escapes Await</a>
+                <a href="{{route('spa.index')}}" class="main-button">Exquisite Escapes Await</a>
             </div>
         </div>
         <div class="oi-image-section" data-aos="fade-up" data-aos-delay="400">
@@ -210,7 +210,7 @@
                 <h2 class="sub-title">The Intimate Wedding</h2>
                 <div class="line"></div>
                 <p>Spend your special day intimately at a stunning riverside where the Balinese jungle meets the rushing waters of the holy Ayung River.</p>
-                <a href="" class="main-button">Discover Your Dream Wedding</a>
+                <a href="{{route('weddings.index')}}" class="main-button">Discover Your Dream Wedding</a>
             </div>
         </div>
     </section>
@@ -226,7 +226,7 @@
 
                     <p>Your arrival will be greeted with a Balinese welcome by a holy Mangku (the Balinese religious priest), who will impart a blessing and perform a Hindu purification ritual in order to symbolically cleanse your soul.</p>
                 </div>
-                <a href="" class="main-button">Explore</a>
+                <a href="{{route('experiences.index')}}" class="main-button">Explore</a>
             </div>
         </div>
     </section>

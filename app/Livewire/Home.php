@@ -12,7 +12,6 @@ class Home extends Component
     {
         return view('livewire.home', [
             'page' => Page::where('status', '1')->where('id', '1')->first(),
-            'accommodation' => Page::where('status', '1')->where('id', '3')->first(),
         ]);
     }
 }

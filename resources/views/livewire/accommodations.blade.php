@@ -42,10 +42,10 @@
                 <div class="pb-6">
                     <h3 class="sub-title">{{$villa_satu->subtitle}}</h3>
                 </div>
-                <img class="lazy w-full h-[770px] wide:h-[770px] large:h-[600px] object-cover" src="{{asset('images/placeholder/vertical.webp')}}" data-src="{{asset('storage/'.$villa_satu->cover_image)}}" alt="{{$villa_satu->subtitle}}">
+                <img class="lazy dp-l-image" src="{{asset('images/placeholder/vertical.webp')}}" data-src="{{asset('storage/'.$villa_satu->cover_image)}}" alt="{{$villa_satu->subtitle}}">
             </div>
             <div class="dp-right" data-aos="fade-up" data-aos-delay="400">
-                <img class="lazy dp-l-image" src="{{asset('images/placeholder/vertical.webp')}}" data-src="{{asset('storage/'.$villa_satu->hero_image)}}" alt="{{$villa_satu->title}}">
+                <img class="lazy dp-r-image" src="{{asset('images/placeholder/vertical.webp')}}" data-src="{{asset('storage/'.$villa_satu->hero_image)}}" alt="{{$villa_satu->title}}">
                 <div>
                     <h2 class="sub-title2">{{$villa_satu->title}}</h2>
                     <div class="paragraph">

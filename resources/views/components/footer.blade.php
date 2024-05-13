@@ -13,14 +13,14 @@
                 {{-- <a href="" class="hover:underline">Story</a> --}}
                 <a href="{{route('awards.index')}}" class="hover:underline">Awards</a>
                 <a href="{{route('press-rooms.index')}}" class="hover:underline">Press Room</a>
-                <a href="" class="hover:underline">Contact Us</a>
+                <a href="{{route('contact-us.index')}}" class="hover:underline">Contact Us</a>
             </div>
             <div class="flex flex-col">
                 <h3 class="footer-title">Others</h3>
-                <a href="" class="hover:underline text-green-600 font-bold">
+                <a href="{{route('sustainability.index')}}" class="hover:underline text-green-600 font-bold">
                     <i class="fa-brands fa-pagelines"></i> Sustainability
                 </a>
-                <a href="" class="hover:underline">Policy & Legal</a>
+                <a href="{{route('policy-legal.index')}}" class="hover:underline">Policy & Legal</a>
                 <a href="" class="hover:underline">Blog</a>
                 <a href="" class="hover:underline">Careers</a>
             </div>

@@ -78,10 +78,10 @@
                 <div class="pb-6">
                     <h2 class="sub-title">{{$section_one->title}}</h2>
                 </div>
-                <img class="lazy w-full h-[770px] wide:h-[770px] large:h-[600px] object-cover" src="{{asset('images/placeholder/vertical.webp')}}" data-src="{{asset('storage/'.$section_one->hero_image)}}" alt="Card Image">
+                <img class="lazy dp-l-image" src="{{asset('images/placeholder/vertical.webp')}}" data-src="{{asset('storage/'.$section_one->hero_image)}}" alt="Card Image">
             </div>
             <div class="dp-right" data-aos="fade-up" data-aos-delay="400">
-                <img class="lazy dp-l-image" src="{{asset('images/placeholder/vertical.webp')}}" data-src="{{asset('storage/'.$section_one->cover_image)}}" alt="Card Image">
+                <img class="lazy dp-r-image" src="{{asset('images/placeholder/vertical.webp')}}" data-src="{{asset('storage/'.$section_one->cover_image)}}" alt="Card Image">
                 <div>
                     {{-- <h3 class="sub-title2"></h3> --}}
                     <div class="paragraph mt-12">
