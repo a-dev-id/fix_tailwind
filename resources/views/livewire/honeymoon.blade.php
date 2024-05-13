@@ -22,7 +22,7 @@
     }
 
     li {
-        margin-left: 20px
+        margin-left: 35px
     }
 
 </style>

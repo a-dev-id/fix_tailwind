@@ -38,6 +38,6 @@
         <a href="{{route('experiences.index')}}" class="item">experiences</a>
         <a href="{{route('spa.index')}}" class="item">spa</a>
         <a href="{{route('honeymoon.index')}}" class="item">honeymoon</a>
-        <a href="" class="item">weddings</a>
+        <a href="{{route('weddings.index')}}" class="item">weddings</a>
     </div>
 </nav>

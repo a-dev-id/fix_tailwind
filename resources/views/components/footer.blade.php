@@ -10,9 +10,9 @@
             </div>
             <div class="flex flex-col">
                 <h3 class="footer-title">About</h3>
-                <a href="" class="hover:underline">Story</a>
-                <a href="" class="hover:underline">Awards</a>
-                <a href="" class="hover:underline">Press Room</a>
+                {{-- <a href="" class="hover:underline">Story</a> --}}
+                <a href="{{route('awards.index')}}" class="hover:underline">Awards</a>
+                <a href="{{route('press-rooms.index')}}" class="hover:underline">Press Room</a>
                 <a href="" class="hover:underline">Contact Us</a>
             </div>
             <div class="flex flex-col">

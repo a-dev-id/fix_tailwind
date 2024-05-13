@@ -41,6 +41,7 @@ class AwardResource extends Resource
             ->columns([
                 Tables\Columns\ImageColumn::make('image'),
                 Tables\Columns\TextColumn::make('title')->searchable()->sortable(),
+                Tables\Columns\ToggleColumn::make('featured')->sortable(),
                 Tables\Columns\ToggleColumn::make('status')->label('Publish')->sortable(),
                 Tables\Columns\TextColumn::make('created_at')->date()->sortable(),
                 Tables\Columns\TextColumn::make('updated_at')->date()->sortable(),

@@ -4,9 +4,9 @@ namespace App\Filament\Resources\PressRoomResource\Pages;
 
 use App\Filament\Resources\PressRoomResource;
 use Filament\Actions;
-use Filament\Resources\Pages\ListRecords;
+use Filament\Resources\Pages\ManageRecords;
 
-class ListPressRooms extends ListRecords
+class ManagePressRooms extends ManageRecords
 {
     protected static string $resource = PressRoomResource::class;
 

@@ -91,10 +91,10 @@
                 <div class="text-left border-t border-gray-600 pt-5 mt-5">
                     {!!$data->description!!}
                 </div>
-                <div class="flex mt-10 py-5 border-y border-gray-600 px-5">
+                <div class="flex mt-10 py-5 border-y border-gray-600 px-2">
                     <div class="text-left">
                         <div>Start from</div>
-                        <div class="text-xl">{{$data->price}}</div>
+                        <div class="text-lg font-bold">{{$data->price}}</div>
                         <div>{{$data->per}}</div>
                     </div>
                     <a href="" class="main-button my-auto me-0">Inquire now</a>

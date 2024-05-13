@@ -25,21 +25,31 @@ class PressRoomResource extends Resource
     {
         return $form
             ->schema([
-                //
-            ]);
+                Forms\Components\TextInput::make('title')->required(),
+                Forms\Components\TextInput::make('subtitle'),
+                Forms\Components\Textarea::make('excerpt')->rows(5),
+                Forms\Components\RichEditor::make('description'),
+                Forms\Components\FileUpload::make('image')->image()->directory('images/awards'),
+                Forms\Components\Toggle::make('status')->label('Publish')->required(),
+            ])->columns(1);
     }
 
     public static function table(Table $table): Table
     {
         return $table
             ->columns([
-                //
+                Tables\Columns\ImageColumn::make('image'),
+                Tables\Columns\TextColumn::make('title')->searchable()->sortable(),
+                Tables\Columns\ToggleColumn::make('status')->label('Publish')->sortable(),
+                Tables\Columns\TextColumn::make('created_at')->date()->sortable(),
+                Tables\Columns\TextColumn::make('updated_at')->date()->sortable(),
             ])
             ->filters([
                 //
             ])
             ->actions([
                 Tables\Actions\EditAction::make(),
+                Tables\Actions\DeleteAction::make(),
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([
@@ -48,19 +58,10 @@ class PressRoomResource extends Resource
             ]);
     }
 
-    public static function getRelations(): array
-    {
-        return [
-            //
-        ];
-    }
-
     public static function getPages(): array
     {
         return [
-            'index' => Pages\ListPressRooms::route('/'),
-            'create' => Pages\CreatePressRoom::route('/create'),
-            'edit' => Pages\EditPressRoom::route('/{record}/edit'),
+            'index' => Pages\ManagePressRooms::route('/'),
         ];
     }
 }
