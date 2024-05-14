@@ -50,86 +50,37 @@
     {{-- story section --}}
     <section class="featured" data-aos="fade-up" data-aos-delay="200">
         <div class="content-carousel">
-            <div class="max-w-xl mx-3">
+
+            @foreach ($offers as $data)
+            <div class="max-w-xl mx-3 mt-24">
                 <div class="overflow-hidden">
-                    <img src="{{asset('images/placeholder/horizontal.webp')}}" data-src="https://images.unsplash.com/photo-1712337646541-d0c6f85447f8?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="lazy w-full h-96 object-cover" alt="Image 1">
+                    <img src="{{asset('images/placeholder/horizontal.webp')}}" data-src="{{asset('storage/'.$data->hero_image)}}" class="lazy w-full h-96 object-cover" alt="{{$data->meta_title}}">
                     <div class="p-4">
-                        <h2 class="card-title">Card 1</h2>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam aperiam quidem est saepe consectetur, unde commodi, nulla nesciunt atque sint cupiditate temporibus! Voluptates itaque saepe, ex quos numquam enim ratione.</p>
+                        <h2 class="card-title">{{$data->title}}</h2>
+                        {{Str::limit($data->excerpt, 100)}}
                     </div>
-                    <div class="card-footer">Footer</div>
+                    <div class="card-footer">
+                        <a href="{{route('offers.show', [$data->slug])}}">Discover</a>
+                    </div>
                 </div>
             </div>
-            <div class="max-w-xl mx-3">
+            @endforeach
+
+            @foreach ($stories as $data)
+            <div class="max-w-xl mx-3 mt-24">
                 <div class="overflow-hidden">
-                    <img src="{{asset('images/placeholder/horizontal.webp')}}" data-src="https://images.unsplash.com/photo-1712337646541-d0c6f85447f8?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Image 1" class="lazy w-full h-96 object-cover">
+                    <img src="{{asset('images/placeholder/horizontal.webp')}}" data-src="{{asset('storage/'.$data->image)}}" class="lazy w-full h-96 object-cover" alt="{{$data->meta_title}}">
                     <div class="p-4">
-                        <h2 class="card-title">Card 2</h2>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam aperiam quidem est saepe consectetur, unde commodi, nulla nesciunt atque sint cupiditate temporibus! Voluptates itaque saepe, ex quos numquam enim ratione.</p>
+                        <h2 class="card-title">{{$data->title}}</h2>
+                        {{Str::limit($data->excerpt, 100)}}
                     </div>
-                    <div class="card-footer">Footer</div>
+                    <div class="card-footer">
+                        <a href="{{route('story.show', [$data->slug])}}">Discover</a>
+                    </div>
                 </div>
             </div>
-            <div class="max-w-xl mx-3">
-                <div class="overflow-hidden">
-                    <img src="{{asset('images/placeholder/horizontal.webp')}}" data-src="https://images.unsplash.com/photo-1712337646541-d0c6f85447f8?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Image 1" class="lazy w-full h-96 object-cover">
-                    <div class="p-4">
-                        <h2 class="card-title">Card 3</h2>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam aperiam quidem est saepe consectetur, unde commodi, nulla nesciunt atque sint cupiditate temporibus! Voluptates itaque saepe, ex quos numquam enim ratione.</p>
-                    </div>
-                    <div class="card-footer">Footer</div>
-                </div>
-            </div>
-            <div class="max-w-xl mx-3">
-                <div class="overflow-hidden">
-                    <img src="{{asset('images/placeholder/horizontal.webp')}}" data-src="https://images.unsplash.com/photo-1712337646541-d0c6f85447f8?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Image 1" class="lazy w-full h-96 object-cover">
-                    <div class="p-4">
-                        <h2 class="card-title">Card 4</h2>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam aperiam quidem est saepe consectetur, unde commodi, nulla nesciunt atque sint cupiditate temporibus! Voluptates itaque saepe, ex quos numquam enim ratione.</p>
-                    </div>
-                    <div class="card-footer">Footer</div>
-                </div>
-            </div>
-            <div class="max-w-xl mx-3">
-                <div class="overflow-hidden">
-                    <img src="{{asset('images/placeholder/horizontal.webp')}}" data-src="https://images.unsplash.com/photo-1712337646541-d0c6f85447f8?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Image 1" class="lazy w-full h-96 object-cover">
-                    <div class="p-4">
-                        <h2 class="card-title">Card 5</h2>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam aperiam quidem est saepe consectetur, unde commodi, nulla nesciunt atque sint cupiditate temporibus! Voluptates itaque saepe, ex quos numquam enim ratione.</p>
-                    </div>
-                    <div class="card-footer">Footer</div>
-                </div>
-            </div>
-            <div class="max-w-xl mx-3">
-                <div class="overflow-hidden">
-                    <img src="{{asset('images/placeholder/horizontal.webp')}}" data-src="https://images.unsplash.com/photo-1712337646541-d0c6f85447f8?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Image 1" class="lazy w-full h-96 object-cover">
-                    <div class="p-4">
-                        <h2 class="card-title">Card 6</h2>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam aperiam quidem est saepe consectetur, unde commodi, nulla nesciunt atque sint cupiditate temporibus! Voluptates itaque saepe, ex quos numquam enim ratione.</p>
-                    </div>
-                    <div class="card-footer">Footer</div>
-                </div>
-            </div>
-            <div class="max-w-xl mx-3">
-                <div class="overflow-hidden">
-                    <img src="{{asset('images/placeholder/horizontal.webp')}}" data-src="https://images.unsplash.com/photo-1712337646541-d0c6f85447f8?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Image 1" class="lazy w-full h-96 object-cover">
-                    <div class="p-4">
-                        <h2 class="card-title">Card 7</h2>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem facere, cum iste ad tempora velit consectetur quia nihil beatae voluptate sequi possimus sit quam saepe! Id vero officiis eos consequuntur?</p>
-                    </div>
-                    <div class="card-footer">Footer</div>
-                </div>
-            </div>
-            <div class="max-w-xl mx-3">
-                <div class="overflow-hidden">
-                    <img src="{{asset('images/placeholder/horizontal.webp')}}" data-src="https://images.unsplash.com/photo-1712337646541-d0c6f85447f8?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Image 1" class="lazy w-full h-96 object-cover">
-                    <div class="p-4">
-                        <h2 class="card-title">Card 8</h2>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam aperiam quidem est saepe consectetur, unde commodi, nulla nesciunt atque sint cupiditate temporibus! Voluptates itaque saepe, ex quos numquam enim ratione.</p>
-                    </div>
-                    <div class="card-footer">Footer</div>
-                </div>
-            </div>
+            @endforeach
+
         </div>
     </section>
 

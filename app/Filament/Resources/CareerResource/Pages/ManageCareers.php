@@ -4,16 +4,16 @@ namespace App\Filament\Resources\CareerResource\Pages;
 
 use App\Filament\Resources\CareerResource;
 use Filament\Actions;
-use Filament\Resources\Pages\EditRecord;
+use Filament\Resources\Pages\ManageRecords;
 
-class EditCareer extends EditRecord
+class ManageCareers extends ManageRecords
 {
     protected static string $resource = CareerResource::class;
 
     protected function getHeaderActions(): array
     {
         return [
-            Actions\DeleteAction::make(),
+            Actions\CreateAction::make(),
         ];
     }
 }

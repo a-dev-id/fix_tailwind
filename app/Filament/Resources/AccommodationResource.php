@@ -98,6 +98,7 @@ class AccommodationResource extends Resource
     {
         return [
             RelationManagers\ImagesRelationManager::class,
+            RelationManagers\FacilitiesRelationManager::class,
         ];
     }
 

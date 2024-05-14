@@ -31,6 +31,7 @@ class PressRoomResource extends Resource
                 Forms\Components\RichEditor::make('description'),
                 Forms\Components\FileUpload::make('image')->image()->directory('images/awards'),
                 Forms\Components\Toggle::make('status')->label('Publish')->required(),
+                Forms\Components\Toggle::make('feature'),
             ])->columns(1);
     }
 
@@ -40,6 +41,7 @@ class PressRoomResource extends Resource
             ->columns([
                 Tables\Columns\ImageColumn::make('image'),
                 Tables\Columns\TextColumn::make('title')->searchable()->sortable(),
+                Tables\Columns\ToggleColumn::make('featured')->sortable(),
                 Tables\Columns\ToggleColumn::make('status')->label('Publish')->sortable(),
                 Tables\Columns\TextColumn::make('created_at')->date()->sortable(),
                 Tables\Columns\TextColumn::make('updated_at')->date()->sortable(),

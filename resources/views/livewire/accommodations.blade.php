@@ -17,8 +17,13 @@
 
 @section('header')
 <header class="slick-carousel shadow-xl">
-    @foreach ($page->images as $data)
     <div>
+        <div class="h-screen">
+            <img src="{{asset('images/placeholder/horizontal.webp')}}" data-src="{{asset('storage/'.$page->hero_image)}}" class="lazy w-full h-full object-cover" alt="Image 2">
+        </div>
+    </div>
+    @foreach ($page->images as $data)
+    <div wire:key="{{ $data->id }}">
         <div class="h-screen">
             <img src="{{asset('images/placeholder/horizontal.webp')}}" data-src="{{asset('storage/'.$data->image)}}" class="lazy w-full h-full object-cover" alt="Image 2">
         </div>
@@ -51,7 +56,7 @@
                     <div class="paragraph">
                         {{$villa_satu->excerpt}}
                     </div>
-                    <a href="{{route('accommodations.show', $villa_satu->slug)}}" class="main-button ms-1">{{$villa_satu->button_label}}</a>
+                    <a href="{{route('accommodations.show', $villa_satu->slug)}}" class="main-button ms-1">Explore</a>
                 </div>
             </div>
         </div>
@@ -71,7 +76,7 @@
                         </div>
                     </div>
                     <div class="card-footer">
-                        <a href="{{route('accommodations.show', $data->slug)}}">{{$data->button_label}}</a>
+                        <a href="{{route('accommodations.show', $data->slug)}}">Explore</a>
                     </div>
                 </div>
             </div>
@@ -82,7 +87,7 @@
 
     <section class="visual-harmony mt-24">
         <div class="vh-background" style="background-image: url('{{asset('storage/'.$villa_dua->cover_image)}}')"></div>
-        <div class="vh-section" data-aos="fade-up" data-aos-delay="300">
+        <div class="vh-section" data-aos="fade-up">
             <div class="vh-inner-section">
                 <div class="vh-text">
                     <h2 class="sub-title">{{$villa_dua->title}}</h2>
@@ -90,7 +95,7 @@
                     <div class="paragraph">
                         {{$villa_dua->excerpt}}
                     </div>
-                    <a href="{{route('accommodations.show', $villa_dua->slug)}}" class="main-button">{{$villa_dua->button_label}}</a>
+                    <a href="{{route('accommodations.show', $villa_dua->slug)}}" class="main-button">Explore</a>
                 </div>
                 <img class="lazy vh-image" src="{{asset('images/placeholder/horizontal.webp')}}" data-src="{{asset('storage/'.$villa_dua->hero_image)}}" alt="{{$villa_dua->title}}">
             </div>

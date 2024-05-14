@@ -14,4 +14,9 @@ class Accommodation extends Model
     {
         return $this->hasMany(AccommodationImage::class);
     }
+
+    public function facilities()
+    {
+        return $this->belongsToMany(Facility::class, 'accommodation_facility');
+    }
 }

@@ -162,7 +162,7 @@
 
 @layer components {
     .featured {
-        @apply mx-auto mt-24 w-11/12;
+        @apply mx-auto w-11/12;
     }
 }
 
