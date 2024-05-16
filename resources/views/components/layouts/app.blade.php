@@ -31,30 +31,11 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/js/all.min.js"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=IntersectionObserver"></script>
     <script src="{{asset('js/main.js')}}"></script>
 
     @livewireScripts
     @stack('js')
-
-    <script>
-        $(document).ready(function () {
-            function lazyLoad() {
-                $('.lazy').each(function () {
-                    var imagePos = $(this).offset().top;
-                    var windowHeight = $(window).height();
-                    var topOfWindow = $(window).scrollTop();
-                    if (imagePos < topOfWindow + windowHeight + 100) {
-                        $(this).attr('src', $(this).attr('data-src'));
-                        $(this).removeClass('lazy');
-                    }
-                });
-            }
-            lazyLoad();
-            $(window).scroll(function () {
-                lazyLoad();
-            });
-        });
-    </script>
 
     <script>
         $(document).ready(function () {
@@ -81,15 +62,22 @@
                 slidesToShow: 3,
                 slidesToScroll: 1,
                 infinite: false,
-                responsive: [{
-                    breakpoint: 768,
+                responsive: [
+                {
+                    breakpoint: 1024,
+                    settings: {
+                        slidesToShow: 2,
+                        slidesToScroll: 1,
+                    }
+                },
+                {
+                    breakpoint: 600,
                     settings: {
                         slidesToShow: 1,
-                        slidesToScroll: 1,
-                        centerMode: true,
-                        centerPadding: "40px",
-                    },
-                },],
+                        slidesToScroll: 1
+                    }
+                }
+            ],
             });
         });
     </script>

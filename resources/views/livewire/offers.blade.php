@@ -18,15 +18,17 @@
 @section('header')
 <header class="slick-carousel shadow-xl">
     <div>
-        <div class="h-screen">
-            <img src="{{asset('images/placeholder/horizontal.webp')}}" data-src="https://hanginggardensofbali.com/storage/gqnCeVF7buvf4qF7o7B5Yu0kRFzmJr-metaNjI5NDdkMDM2MTAxNDE5NjY2NjIwMy5qcGc=-.jpg" class="lazy w-full h-full object-cover" alt="Image 2">
+        <div class="h-slider">
+            <img src="{{asset('images/placeholder/horizontal.webp')}}" data-src="{{asset('storage/'.$page->hero_image)}}" class="lazy w-full h-full object-cover" alt="{{$page->meta_title}}">
         </div>
     </div>
-    <div>
-        <div class="h-screen">
-            <img src="{{asset('images/placeholder/horizontal.webp')}}" data-src="https://hanginggardensofbali.com/storage/4XGPw5nwPWmHdJk8fCuO0fL9dOOnWi-metaNjI5NDcyYzE2ZDZhNzY1NDQ5Nzc4MC5qcGc=-.jpg" class="lazy w-full h-full object-cover" alt="Image 2">
+    @foreach ($page->images as $data)
+    <div wire:key="{{ $data->id }}">
+        <div class="h-slider">
+            <img src="{{asset('images/placeholder/horizontal.webp')}}" data-src="{{asset('storage/'.$data->image)}}" class="lazy w-full h-full object-cover" alt="{{$data->title}}">
         </div>
     </div>
+    @endforeach
 </header>
 @endsection
 
@@ -40,28 +42,24 @@
     </section>
 
     @foreach ($offers as $data)
-    <section class="{{$loop->iteration%2 == 1 ? 'bg-gray-200/50 py-20 mt-20' : 'mt-20'}}" wire:key="{{ $data->id }}" data-aos="fade-up" data-aos-delay="200">
-        <div class="flex w-full max-w-6xl wide:max-w-6xl large:max-w-4xl mx-auto overflow-hidden">
-            <div class="w-2/3">
-                <img src="{{asset('images/placeholder/horizontal.webp')}}" data-src="{{asset('storage/'.$data->hero_image)}}" alt="Sample Image" class="object-cover w-full h-[450px] large:h-[350px] wide:h-[450px] lazy">
+    <section class="{{$loop->iteration%2 == 1 ? 'bg-gray-200/50 py-20 my-20' : 'my-20'}}" wire:key="{{ $data->id }}" data-aos="fade-up" data-aos-delay="200">
+        <div class="offer">
+            <div class="o-left">
+                <img src="{{asset('images/placeholder/horizontal.webp')}}" data-src="{{asset('storage/'.$data->hero_image)}}" alt="Sample Image" class="o-l-image lazy">
             </div>
-            <div class="w-2/3 px-10 flex flex-col justify-between">
+            <div class="o-right">
                 <div class="mt-1">
                     <h2 class="sub-title">{{$data->title}}</h2>
                     <div class="paragraph">
                         {{$data->excerpt}}
                     </div>
                 </div>
-                <div class="flex mb-1">
-                    <button class="secondary-button black me-4">BOOK NOW</button>
-                    <button class="secondary-button transparent me-4">VIEW DETAIL</button>
+                <div class="flex flex-col mb-1 large:flex-row wide:flex-row md:flex-col">
+                    <a href="{{$data->button_value}}" class="secondary-button black me-4 md:py-3 text-center md:text-center md:mt-0">{{$data->button_label}}</a>
+                    <a href="{{route('offers.show', [$data->slug])}}" class="secondary-button transparent me-4 py-2.5 md:py-3 text-center md:text-center mt-2 md:mt-5 lg:mt-5 large:mt-0 wide:mt-0">VIEW DETAIL</a>
                 </div>
-
             </div>
         </div>
     </section>
     @endforeach
-
-
-
 </main>

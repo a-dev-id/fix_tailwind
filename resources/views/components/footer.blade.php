@@ -1,7 +1,7 @@
 <footer class="footer">
     <div class="footer-section">
         <div class="footer-main">
-            <div class="pe-10">
+            <div class="pe-10 flex items-center">
                 <img src="{{asset('images/placeholder/horizontal.webp')}}" data-src="https://hanginggardensofbali.com/images/logo/Logo-02-HGOB.png" class="lazy footer-logo" alt="">
             </div>
             <div class="pe-5">
@@ -28,7 +28,7 @@
             </div>
         </div>
         <div class="footer-bottom">
-            <div class="flex">
+            <div class="f-b-icon">
                 {{-- instagram --}}
                 <a href="{{$instagram->button_value}}" class="me-5" target="_blank">
                     <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" class="fill-white h-6 w-6" viewBox="0 0 24 24">
@@ -54,7 +54,7 @@
                     </svg>
                 </a>
             </div>
-            <div>Copyright &copy; {{ now()->year }} Hanging Gardens of Bali.</div>
+            <div class="f-b-copy">Copyright &copy; {{ now()->year }} Hanging Gardens of Bali.</div>
         </div>
     </div>
 </footer>

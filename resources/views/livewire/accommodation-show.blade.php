@@ -28,7 +28,7 @@
     });
     
     $('.nav-slider').slick({
-        slidesToShow: 3,
+        slidesToShow: 5,
         slidesToScroll: 1,
         asNavFor: '.main-slider',
         dots: false,
@@ -44,8 +44,8 @@
 @section('header')
 <header class="slick-carousel shadow-xl">
     <div>
-        <div class="h-screen">
-            <img src="{{asset('images/placeholder/horizontal.webp')}}" data-src="{{asset('storage/'.$accommodation->hero_image)}}" class="lazy w-full h-full object-cover" alt="Image 2">
+        <div class="h-slider">
+            <img src="{{asset('images/placeholder/horizontal.webp')}}" data-src="{{asset('storage/'.$accommodation->hero_image)}}" class="lazy w-full h-full object-cover" alt="{{$accommodation->meta_title}}">
         </div>
     </div>
 </header>
@@ -61,33 +61,35 @@
     </section>
 
     <section class="bg-gray-200/50">
-        <div class="w-8/12 grid grid-cols-2 mx-auto h-auto py-20 items-center">
-            <div>
+        <div class="villa">
+            <div class="lg:pe-5 md:px-10">
                 <h2 class="sub-title" data-aos="fade-up">Features</h2>
                 <div class="line ms-0" data-aos="fade-up"></div>
-                <div class="grid grid-cols-2 gap-4 mt-5 mb-16">
+                <div class="grid grid-cols-2 gap-4 mt-5 mb-16" data-aos="fade-up">
                     @foreach ($accommodation->facilities as $data)
-                    <div class="flex items-center" data-aos="fade-up" wire:key="{{ $data->id }}" data-aos="fade-up">
+                    <div class="flex items-center" wire:key="{{ $data->id }}">
                         <img src="{{asset('storage/'.$data->image)}}" class="h-6 w-6 me-2">
                         {{$data->title}}
                     </div>
                     @endforeach
                 </div>
-                <a href="" class="main-button px-10 py-5" data-aos="fade-up">Book Now</a>
+                <a href="https://book-directonline.com/properties/hanginggardensofbalidirect" class="main-button px-10 py-5" data-aos="fade-up">Book Now</a>
             </div>
-            <div>
+            <div class="md:mt-24">
                 <div class="main-slider">
                     @foreach ($accommodation->Images as $data)
-                    <div class="slide px-2" data-aos="fade-up">
+                    <div class="slide px-2">
                         <img src="{{asset('storage/'.$data->image)}}" alt="Room 1" class="w-full h-auto">
                     </div>
                     @endforeach
                 </div>
                 <div class="nav-slider mt-4">
                     @foreach ($accommodation->Images as $data)
-                    <div class="slide px-2" data-aos="fade-up">
+                    @if ($data->status == 1)
+                    <div class="slide px-2">
                         <img src="{{asset('storage/'.$data->image)}}" alt="Room 1" class="w-full h-auto cursor-pointer">
                     </div>
+                    @endif
                     @endforeach
                 </div>
             </div>

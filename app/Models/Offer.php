@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Offer extends Model
 {
     use HasFactory;
+
+    public function offerfields()
+    {
+        return $this->hasMany(OfferField::class);
+    }
 }

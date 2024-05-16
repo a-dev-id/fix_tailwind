@@ -18,8 +18,8 @@
 @section('header')
 <header class="slick-carousel shadow-xl">
     <div>
-        <div class="h-screen">
-            <img src="{{asset('images/placeholder/horizontal.webp')}}" data-src="{{asset('storage/'.$blog->image)}}" class="lazy w-full h-full object-cover" alt="{{$blog->meta_title}}">
+        <div class="head-slider">
+            <img src="{{asset('images/placeholder/horizontal.webp')}}" data-src="{{asset('storage/'.$blog->hero_image)}}" class="lazy w-full h-full object-cover" alt="{{$blog->meta_title}}">
         </div>
     </div>
 </header>

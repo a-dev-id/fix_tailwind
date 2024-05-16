@@ -12,7 +12,7 @@ class Offers extends Component
     {
         return view('livewire.offers', [
             'page' => Page::where('status', '1')->where('id', '2')->first(),
-            'offers' => Offer::where('status', '1')->get(),
+            'offers' => Offer::where('status', '1')->latest()->get(),
         ]);
     }
 }

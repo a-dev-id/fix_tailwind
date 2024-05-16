@@ -30,10 +30,15 @@
 
 @section('header')
 <header class="slick-carousel shadow-xl">
+    <div>
+        <div class="head-slider">
+            <img src="{{asset('images/placeholder/horizontal.webp')}}" data-src="{{asset('storage/'.$page->hero_image)}}" class="lazy w-full h-full object-cover" alt="{{$page->meta_title}}">
+        </div>
+    </div>
     @foreach ($page->images as $data)
     <div wire:key="{{ $data->id }}">
-        <div class="h-screen">
-            <img src="{{asset('images/placeholder/horizontal.webp')}}" data-src="{{asset('storage/'.$data->image)}}" class="lazy w-full h-full object-cover" alt="Image 2">
+        <div class="head-slider">
+            <img src="{{asset('images/placeholder/horizontal.webp')}}" data-src="{{asset('storage/'.$data->image)}}" class="lazy w-full h-full object-cover" alt="{{$data->title}}">
         </div>
     </div>
     @endforeach
@@ -51,22 +56,17 @@
 
     @foreach ($honeymoons as $data)
     <section class="visual-insights {{$loop->iteration%2 == 1 ? 'mt-3' : 'bg-white mt-3'}}" wire:key="{{ $data->id }}">
-        <div class="vi-section" data-aos="fade-up" data-aos-delay="200">
-            <img class="lazy vi-image {{$loop->iteration%2 == 1 ? 'large:order-1' : 'large:order-2'}}" src="{{asset('images/placeholder/horizontal.webp')}}" data-src="{{asset('storage/'.$data->image)}}" alt="Placeholder Image">
+        <div class="vi-page" data-aos="fade-up" data-aos-delay="200">
+            <img class="lazy vi-image-page {{$loop->iteration%2 == 1 ? 'large:order-1' : 'large:order-2'}}" src="{{asset('images/placeholder/horizontal.webp')}}" data-src="{{asset('storage/'.$data->image)}}" alt="Placeholder Image">
             <div class="vi-text border-none {{$loop->iteration%2 == 1 ? 'large:order-2' : 'large:order-1'}}">
                 <h2 class="sub-title text-left">{{$data->title}}</h2>
                 <div class="text-left border-t border-gray-600 pt-5 mt-5">
                     {!!$data->description!!}
                 </div>
-                <div class="flex mt-10 py-5 border-y border-gray-600 px-5">
-                    <div class="text-left">
-                        {{-- <div>Start from</div>
-                        <div class="text-xl">{{$data->price}}</div>
-                        <div>{{$data->per}}</div> --}}
-                    </div>
+                <div class="flex mt-10 py-5 border-y border-gray-600 px-2">
+                    <div class="text-left"></div>
                     <a href="" class="main-button my-auto me-0">Inquire now</a>
                 </div>
-
             </div>
         </div>
     </section>

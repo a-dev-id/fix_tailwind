@@ -29,19 +29,10 @@
 @endpush
 
 @section('header')
-{{-- <header class="slick-carousel shadow-xl">
-    @foreach ($page->images as $data)
-    <div wire:key="{{ $data->id }}">
-        <div class="h-screen">
-            <img src="{{asset('images/placeholder/horizontal.webp')}}" data-src="{{asset('storage/'.$data->image)}}" class="lazy w-full h-full object-cover" alt="Image 2">
-        </div>
-    </div>
-    @endforeach
-</header> --}}
 <header class="slick-carousel shadow-xl">
     <div>
-        <div class="h-screen">
-            <img src="{{asset('images/placeholder/horizontal.webp')}}" data-src="{{asset('storage/'.$page->hero_image)}}" class="lazy w-full h-full object-cover" alt="Image 2">
+        <div class="head-slider">
+            <img src="{{asset('images/placeholder/horizontal.webp')}}" data-src="{{asset('storage/'.$page->hero_image)}}" class="lazy w-full h-full object-cover" alt="{{$page->meta_title}}">
         </div>
     </div>
 </header>
@@ -66,7 +57,7 @@
             </div>
         </div>
         <div class="flex items-center justify-end">
-            <a href="{{$data->subtitle}}" class="flex items-center justify-end font-arial font-bold uppercase tracking-widest focus:border-0 focus:outline-none">
+            <a href="{{$data->subtitle}}" class="flex items-center justify-end font-arial font-bold uppercase tracking-widest focus:border-0 focus:outline-none px-3 py-3">
                 view article
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 ms-2">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3" />

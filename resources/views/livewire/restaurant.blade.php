@@ -15,18 +15,33 @@
 <link href="{{ url()->full() }}" rel="canonical">
 @endsection
 
+@push('js')
+<script>
+    $(document).ready(function(){
+        $('#open-modal').click(function(){
+            $('#modal').removeClass('hidden');
+        });
+        $('#close-modal, #close-modal-bottom').click(function(){
+            $('#modal').addClass('hidden');
+        });
+    });
+</script>
+@endpush
+
 @section('header')
 <header class="slick-carousel shadow-xl">
     <div>
-        <div class="h-screen">
-            <img src="{{asset('images/placeholder/horizontal.webp')}}" data-src="https://hanginggardensofbali.com/storage/gqnCeVF7buvf4qF7o7B5Yu0kRFzmJr-metaNjI5NDdkMDM2MTAxNDE5NjY2NjIwMy5qcGc=-.jpg" class="lazy w-full h-full object-cover" alt="Image 2">
+        <div class="head-slider">
+            <img src="{{asset('images/placeholder/horizontal.webp')}}" data-src="{{asset('storage/'.$page->hero_image)}}" class="lazy w-full h-full object-cover" alt="{{$page->meta_title}}">
         </div>
     </div>
-    <div>
-        <div class="h-screen">
-            <img src="{{asset('images/placeholder/horizontal.webp')}}" data-src="https://hanginggardensofbali.com/storage/4XGPw5nwPWmHdJk8fCuO0fL9dOOnWi-metaNjI5NDcyYzE2ZDZhNzY1NDQ5Nzc4MC5qcGc=-.jpg" class="lazy w-full h-full object-cover" alt="Image 2">
+    @foreach ($page->images as $data)
+    <div wire:key="{{ $data->id }}">
+        <div class="head-slider">
+            <img src="{{asset('images/placeholder/horizontal.webp')}}" data-src="{{asset('storage/'.$data->image)}}" class="lazy w-full h-full object-cover" alt="{{$data->title}}">
         </div>
     </div>
+    @endforeach
 </header>
 @endsection
 
@@ -40,33 +55,43 @@
     </section>
 
     <section class="bg-gray-200/50 mt-24">
-        <div class="w-8/12 mx-auto py-10">
+        <div class="restaurant">
             <div class="grid grid-cols-3">
                 <div class="flex flex-col" data-aos="fade-up" data-aos-delay="200">
                     <h3 class="footer-title text-xs tracking-wide font-bold">restaurant information</h3>
                     <div class="font-bold mt-5">Cuisine:</div>
-                    <span>A taste of Rwanda</span>
+                    <span>Western and Indonesian</span>
 
                     <div class="font-bold mt-5">Opening times:</div>
-                    <span>7:00am to 10:00pm</span>
-                    <span>High tea: 3:00pm to 4:00pm</span>
-                    <span>Apéritif: 6:30pm to 7:00pm</span>
+                    <span>Restaurant: 7:00am to 11:00pm</span>
+                    <span>Pool: 7:00am to 7:00pm</span>
                 </div>
                 <div class="flex flex-col" data-aos="fade-up" data-aos-delay="200">
                     <h3 class="footer-title text-xs tracking-wide font-bold">additional information</h3>
-                    <div class="font-bold mt-5">Dress code:</div>
-                    <span>Smart resort wear</span>
-
-                    <div class="font-bold mt-5">Age restrictions:</div>
-                    <span>Guests must be aged over 10 years</span>
+                    <button id="open-modal" class="secondary-button black w-48 md:text-xs mt-8">RESERVE NOW</button>
+                    <a href="https://drive.google.com/file/d/1qSigrT4UO5Q8WTp36tUc_e2CwzJXKff4/view?usp=sharing" target="_blank" class="secondary-button transparent md:py-3.5 w-48 mt-3 text-center">VIEW MENU</a>
                 </div>
+
+                {{-- modal reservation --}}
+                <div id="modal" class="fixed inset-0 bg-gray-900 bg-opacity-50 flex items-center justify-center hidden z-[999]">
+                    <div class="bg-white p-6 rounded-lg shadow-lg w-full max-w-md relative">
+                        <button id="close-modal" class="absolute top-2 right-2 text-gray-400 hover:text-gray-600">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                            </svg>
+                        </button>
+                        <iframe src="https://bookv5.chope.co/booking?rid=threeelements2203bal&source=rest_threeelementsrestaurant.com" width="400px" height="750px"></iframe>
+                        <button id="close-modal-bottom" class="bg-red-500 text-white px-4 py-2 rounded">Close</button>
+                    </div>
+                </div>
+
                 <div class="flex flex-col" data-aos="fade-up" data-aos-delay="200">
                     <h3 class="footer-title text-xs tracking-wide font-bold">reservations</h3>
                     <div class="font-bold mt-5">Contact Us:</div>
-                    <span>+250 221 011 111</span>
+                    <a href="{{$phone->button_value}}">{!!$phone->description!!}</a>
 
                     <div class="font-bold mt-5">Email Us:</div>
-                    <span>reservations@oneandonlynyungwehouse.com</span>
+                    <a href="{{$reservations_email->button_value}}" class="md:text-[12px]">{!!$reservations_email->description!!}</a>
                 </div>
             </div>
         </div>

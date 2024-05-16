@@ -18,14 +18,14 @@
 @section('header')
 <header class="slick-carousel shadow-xl">
     <div>
-        <div class="h-screen">
-            <img src="{{asset('images/placeholder/horizontal.webp')}}" data-src="{{asset('storage/'.$page->hero_image)}}" class="lazy w-full h-full object-cover" alt="Image 2">
+        <div class="h-slider">
+            <img src="{{asset('images/placeholder/horizontal.webp')}}" data-src="{{asset('storage/'.$page->hero_image)}}" class="lazy w-full h-full object-cover" alt="{{$page->meta_title}}">
         </div>
     </div>
     @foreach ($page->images as $data)
     <div wire:key="{{ $data->id }}">
-        <div class="h-screen">
-            <img src="{{asset('images/placeholder/horizontal.webp')}}" data-src="{{asset('storage/'.$data->image)}}" class="lazy w-full h-full object-cover" alt="Image 2">
+        <div class="h-slider">
+            <img src="{{asset('images/placeholder/horizontal.webp')}}" data-src="{{asset('storage/'.$data->image)}}" class="lazy w-full h-full object-cover" alt="{{$data->title}}">
         </div>
     </div>
     @endforeach
@@ -42,21 +42,22 @@
     </section>
 
     <section class="dual-perspectives">
-        <div class="flex justify-center">
+        <div class="dp-section">
             <div class="dp-left" data-aos="fade-up" data-aos-delay="200">
                 <div class="pb-6">
-                    <h3 class="sub-title">{{$villa_satu->subtitle}}</h3>
+                    <h2 class="sub-title">{{$villa_satu->subtitle}}</h2>
                 </div>
                 <img class="lazy dp-l-image" src="{{asset('images/placeholder/vertical.webp')}}" data-src="{{asset('storage/'.$villa_satu->cover_image)}}" alt="{{$villa_satu->subtitle}}">
             </div>
             <div class="dp-right" data-aos="fade-up" data-aos-delay="400">
                 <img class="lazy dp-r-image" src="{{asset('images/placeholder/vertical.webp')}}" data-src="{{asset('storage/'.$villa_satu->hero_image)}}" alt="{{$villa_satu->title}}">
                 <div>
-                    <h2 class="sub-title2">{{$villa_satu->title}}</h2>
+                    <h3 class="sub-title2">{{$villa_satu->title}}</h3>
                     <div class="paragraph">
                         {{$villa_satu->excerpt}}
                     </div>
                     <a href="{{route('accommodations.show', $villa_satu->slug)}}" class="main-button ms-1">Explore</a>
+                    <div class="mb-5 md:mb-0 lg:mb-0 large:mb-0 wide:mb-0"></div>
                 </div>
             </div>
         </div>
@@ -85,7 +86,7 @@
         </div>
     </section>
 
-    <section class="visual-harmony mt-24">
+    <section class="visual-harmony mt-0 md:mt-24 lg:mt-24 large:mt-24 wide:mt-24">
         <div class="vh-background" style="background-image: url('{{asset('storage/'.$villa_dua->cover_image)}}')"></div>
         <div class="vh-section" data-aos="fade-up">
             <div class="vh-inner-section">

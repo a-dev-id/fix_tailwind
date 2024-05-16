@@ -16,27 +16,29 @@
 @endsection
 
 @section('header')
-<header class="slick-carousel shadow-xl">
+{{-- video desktop --}}
+<header class="slick-carousel shadow-xl hidden md:hidden large:block wide:block">
     <div>
         <div class="relative h-screen">
             <iframe class="header-iframe-youtube large:h-[130%]" src="https://www.youtube.com/embed/videoseries?si=TH-ZPdkwmLoLEqLV&list=PLw8fGZ6fiQLBb2euaUmC02VZXij30jhcN&autoplay=1&mute=1&controls=0&loop=1&rel=0&showinfo=0&iv_load_policy=3&playlist=9RA48trBz24" frameborder="0" allowfullscreen></iframe>
         </div>
     </div>
-    {{--
+</header>
+
+{{-- slider mobile --}}
+<header class="slick-carousel shadow-xl md:block large:hidden wide:hidden">
     <div>
-        <div class="relative h-screen">
-            <video controls class="w-full h-full object-cover">
-                <source src="https://hanginggardensofbali.com/videos/hgob-video-mini-compressed.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
+        <div class="h-slider">
+            <img src="{{asset('images/placeholder/horizontal.webp')}}" data-src="{{asset('storage/'.$page->hero_image)}}" class="lazy w-full h-full object-cover" alt="Image 2">
         </div>
     </div>
-    <div>
-        <div class="h-screen">
-            <img src="{{asset('images/placeholder/horizontal.webp')}}" data-src="https://images.unsplash.com/photo-1712337646541-d0c6f85447f8?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="w-full h-full object-cover" alt="Image 2">
+    @foreach ($page->images as $data)
+    <div wire:key="{{ $data->id }}">
+        <div class="h-slider">
+            <img src="{{asset('images/placeholder/horizontal.webp')}}" data-src="{{asset('storage/'.$data->image)}}" class="lazy w-full h-full object-cover" alt="Image 2">
         </div>
     </div>
-    --}}
+    @endforeach
 </header>
 @endsection
 
@@ -60,7 +62,7 @@
                         {{Str::limit($data->excerpt, 100)}}
                     </div>
                     <div class="card-footer">
-                        <a href="{{route('offers.show', [$data->slug])}}">Discover</a>
+                        <a href="{{route('offers.show', [$data->slug])}}" class="text-[10px] md:text-base lg:text-base large:text-base wide:text-base font-bold">Discover</a>
                     </div>
                 </div>
             </div>
@@ -75,7 +77,7 @@
                         {{Str::limit($data->excerpt, 100)}}
                     </div>
                     <div class="card-footer">
-                        <a href="{{route('story.show', [$data->slug])}}">Discover</a>
+                        <a href="{{route('story.show', [$data->slug])}}" class="text-[10px] md:text-base lg:text-base large:text-base wide:text-base font-bold">Discover</a>
                     </div>
                 </div>
             </div>
@@ -87,7 +89,7 @@
     {{-- accommodation section --}}
     <section class="visual-insights">
         <div class="vi-section" data-aos="fade-up" data-aos-delay="200">
-            <img class="lazy vi-image" src="{{asset('images/placeholder/horizontal.webp')}}" data-src="{{asset('storage/images/accommodation/hero_image/01HWPW9YB7QE8VT6R3793TPC55.webp')}}" alt="Placeholder Image">
+            <img class="lazy vi-image" src="{{asset('images/placeholder/horizontal.webp')}}" data-src="{{asset('storage/'.$accommodation->hero_image)}}" alt="Placeholder Image">
             <div class="vi-text">
                 <h2 class="sub-title">LUXURY RESORT WITH PRIVATE POOL</h2>
                 <div class="line"></div>
@@ -99,7 +101,7 @@
 
     {{-- experiences section --}}
     <section class="dual-perspectives">
-        <div class="flex justify-center">
+        <div class="dp-section">
             <div class="dp-left" data-aos="fade-up" data-aos-delay="200">
                 <div class="pb-6">
                     <h2 class="sub-title">Unique Experiences</h2>
@@ -110,10 +112,11 @@
                 <img class="lazy dp-r-image" src="{{asset('images/placeholder/vertical.webp')}}" data-src="https://hanginggardensofbali.com/storage/aJvmNQ79c5vf4I6qwiEEInTwmGLboy-metadWx0aW1hdGUgbWlsaW9uYWlyZSBoYW5nb3V0LmpwZw==-.jpg" alt="Card Image">
                 <div>
                     <h3 class="sub-title2">Ultimate Millionaire Hangout</h3>
-                    <p class="paragraph">
+                    <div class="paragraph">
                         Experience a day of pure indulgence and immerse yourself in a million-dollar view with our resort's exclusive daily pass.
-                    </p>
-                    <a href="{{route('experiences.index')}}" class="main-button ms-1">Discover Exclusive Adventures</a>
+                    </div>
+                    <a href="{{route('experiences.index')}}" class="main-button ms-1 mb-2 md:mb-0 lg:mb-0 large:mb-0 wide:mb-0">Discover Exclusive Adventures</a>
+                    <div class="mb-5 md:mb-0 lg:mb-0 large:mb-0 wide:mb-0"></div>
                 </div>
             </div>
         </div>
@@ -121,7 +124,7 @@
 
     {{-- restaurant section --}}
     <section class="visual-harmony">
-        <div class="vh-background bg-[url('https://hanginggardensofbali.com/storage/eldfH1IPjHYUjpQhDYpz6pLWmtD0m8-metaNjNiMjlhZDFhNWEwNjcyODkxOTUxOC5qcGc=-.jpg')]"></div>
+        <div class="vh-background" style="background-image: url('{{asset('storage/images/accommodation/images/01HXX4AQHK7NTSZSRREK4GGS5Q.jpg')}}')"></div>
         <div class="vh-section" data-aos="fade-up" data-aos-delay="300">
             <div class="vh-inner-section">
                 <div class="vh-text">
@@ -140,7 +143,7 @@
     {{-- spa section --}}
     <section class="overlay-impression">
         <div class="oi-text" data-aos="fade-up" data-aos-delay="200">
-            <div class="oi-section">
+            <div class="oi-section" data-aos="fade-up">
                 <h2 class="sub-title">WELLNESS RETREAT & SPA RESORT</h2>
                 <p class="paragraph">
                     Not only recognized as the best Ubud honeymoon resort, but also elected by "World Luxury Spa Awards" as The Best "LUXURY DESTINATION SPA" our truly luxurious Spa Collection combines natural, local ingredients and ancient techniques, to create beauty therapies and treatments that soothe the mind, rejuvenate the body and energize the soul.

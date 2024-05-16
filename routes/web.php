@@ -13,6 +13,7 @@ use App\Livewire\Wedding;
 use App\Livewire\Award;
 use App\Livewire\Careers;
 use App\Livewire\ContactUs;
+use App\Livewire\OfferShow;
 use App\Livewire\PolicyLegal;
 use App\Livewire\PressRoom;
 use App\Livewire\Story;
@@ -21,7 +22,7 @@ use App\Livewire\Sustainability;
 
 Route::get('/', Home::class)->name('index');
 Route::get('/offers', Offers::class)->name('offers.index');
-Route::get('/offer/{slug}', Offers::class)->name('offers.show');
+Route::get('/offer/{slug}', OfferShow::class)->name('offers.show');
 Route::get('/accommodations', Accommodations::class)->name('accommodations.index');
 Route::get('/accommodation/{slug}', AccommodationShow::class)->name('accommodations.show');
 Route::get('/experiences', Experiences::class)->name('experiences.index');

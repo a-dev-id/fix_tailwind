@@ -29,3 +29,63 @@ $(document).ready(function () {
         }
     });
 });
+
+$(document).ready(function () {
+    $("#open-offcanvas").click(function () {
+        $("#offcanvas").removeClass("hidden").addClass("offcanvas-open");
+        $("#offcanvas-overlay").removeClass("hidden");
+    });
+
+    $("#close-offcanvas, #offcanvas-overlay").click(function () {
+        $("#offcanvas").removeClass("offcanvas-open").addClass("hidden");
+        $("#offcanvas-overlay").addClass("hidden");
+    });
+});
+
+// $(document).ready(function () {
+//     function lazyLoad() {
+//         $(".lazy").each(function () {
+//             var imagePos = $(this).offset().top;
+//             var windowHeight = $(window).height();
+//             var topOfWindow = $(window).scrollTop();
+//             if (imagePos < topOfWindow + windowHeight + 100) {
+//                 $(this).attr("src", $(this).attr("data-src"));
+//                 $(this).removeClass("lazy");
+//             }
+//         });
+//     }
+//     lazyLoad();
+//     $(window).scroll(function () {
+//         lazyLoad();
+//     });
+// });
+
+$(document).ready(function () {
+    // Lazy load images
+    var lazyImages = [].slice.call(document.querySelectorAll("img.lazy"));
+    if ("IntersectionObserver" in window) {
+        let lazyImageObserver = new IntersectionObserver(function (
+            entries,
+            observer,
+        ) {
+            entries.forEach(function (entry) {
+                if (entry.isIntersecting) {
+                    let lazyImage = entry.target;
+                    lazyImage.src = lazyImage.dataset.src;
+                    lazyImage.classList.remove("lazy");
+                    lazyImageObserver.unobserve(lazyImage);
+                }
+            });
+        });
+
+        lazyImages.forEach(function (lazyImage) {
+            lazyImageObserver.observe(lazyImage);
+        });
+    } else {
+        // Fallback for older browsers
+        lazyImages.forEach(function (lazyImage) {
+            lazyImage.src = lazyImage.dataset.src;
+            lazyImage.classList.remove("lazy");
+        });
+    }
+});

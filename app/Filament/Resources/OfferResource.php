@@ -42,15 +42,35 @@ class OfferResource extends Resource
                                 Forms\Components\Textarea::make('excerpt')->rows(5),
                                 Forms\Components\RichEditor::make('description'),
                             ])->collapsible(),
-                        Forms\Components\Section::make('SEO')
+                        Forms\Components\Repeater::make('offerfields')
+                            ->relationship('offerfields')
                             ->schema([
-                                Forms\Components\TextInput::make('meta_title')->maxLength(65)
-                                    ->hint(fn ($state, $component) => new HtmlString('<i>Max 70 characters (left: ' . $component->getMaxLength() - strlen($state) . ' characters)</i>'))
-                                    ->reactive(),
-                                Forms\Components\Textarea::make('meta_description')->rows(5)->maxLength(160)
-                                    ->hint(fn ($state, $component) => new HtmlString('<i>Max 155 characters (left: ' . $component->getMaxLength() - strlen($state) . ' characters</i>'))
-                                    ->reactive(),
-                            ])->collapsible(),
+                                Forms\Components\Select::make('layout')
+                                    ->options([
+                                        'visual-insights' => 'Visual Insights',
+                                        'dual-perspectives' => 'Dual Perspectives',
+                                        'visual-harmony' => 'Visual Harmony',
+                                        'overlay-impression' => 'Overlay Impression',
+                                        'scenics-spotlight' => 'Scenics Spotlight',
+                                    ]),
+                                Forms\Components\Grid::make()
+                                    ->schema([
+                                        Forms\Components\TextInput::make('title'),
+                                        Forms\Components\TextInput::make('subtitle'),
+                                        Forms\Components\FileUpload::make('main_image')->image()->directory('images/blog/custom_fields/main'),
+                                        Forms\Components\FileUpload::make('secondary_image')->image()->directory('images/blog/custom_fields/secondary'),
+                                    ])->columnSpan(2),
+                                Forms\Components\Textarea::make('excerpt')->rows(5),
+                                Forms\Components\Grid::make()
+                                    ->schema([
+                                        Forms\Components\TextInput::make('button_label'),
+                                        Forms\Components\TextInput::make('button_value'),
+                                    ])->columnSpan(2),
+                            ])
+                            ->reorderableWithButtons()
+                            ->reorderable()
+                            ->collapsible()
+                            ->columnSpan(2),
                     ])->columnSpan(2),
                 Forms\Components\Grid::make()
                     ->schema([
@@ -75,6 +95,15 @@ class OfferResource extends Resource
                                         Forms\Components\Toggle::make('featured')->label('Featured'),
                                     ])
                                     ->columnSpan(1),
+                            ])->collapsible(),
+                        Forms\Components\Section::make('SEO')
+                            ->schema([
+                                Forms\Components\TextInput::make('meta_title')->maxLength(65)
+                                    ->hint(fn ($state, $component) => new HtmlString('<i>Max 70 characters (left: ' . $component->getMaxLength() - strlen($state) . ' characters)</i>'))
+                                    ->reactive(),
+                                Forms\Components\Textarea::make('meta_description')->rows(5)->maxLength(160)
+                                    ->hint(fn ($state, $component) => new HtmlString('<i>Max 155 characters (left: ' . $component->getMaxLength() - strlen($state) . ' characters</i>'))
+                                    ->reactive(),
                             ])->collapsible(),
                     ])->columnSpan(1),
             ])->columns(3);
