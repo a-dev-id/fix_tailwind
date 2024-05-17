@@ -18,13 +18,13 @@
 @section('header')
 <header class="slick-carousel shadow-xl">
     <div>
-        <div class="h-screen">
+        <div class="h-slider">
             <img src="{{asset('images/placeholder/horizontal.webp')}}" data-src="{{asset('storage/'.$page->hero_image)}}" class="lazy w-full h-full object-cover" alt="Image 2">
         </div>
     </div>
     @foreach ($page->images as $data)
     <div wire:key="{{ $data->id }}">
-        <div class="h-screen">
+        <div class="h-slider">
             <img src="{{asset('images/placeholder/horizontal.webp')}}" data-src="{{asset('storage/'.$data->image)}}" class="lazy w-full h-full object-cover" alt="Image 2">
         </div>
     </div>
@@ -41,7 +41,7 @@
         </div>
     </section>
 
-    <section class="grid grid-cols-3 w-1/2 mx-auto">
+    <section class="grid grid-cols-1 gap-10 md:gap-10 lg:gap-0 large:gap-0 wide:gap-0 md:grid-cols-1 lg:grid-cols-3 large:grid-cols-3 wide:grid-cols-3 md:w-11/12 lg:w-9/12 large:w-1/2 wide:w-1/2 w-11/12 mx-auto">
         <div data-aos="fade-up">
             <a href="{{$phone->button_value}}" class="text-gray-600 font-arial flex flex-col justify-center items-center text-center">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-14 h-14 wide:w-14 wide:h-14 large:w-12 large:h-12 fill-gray-600">
@@ -67,7 +67,7 @@
         </div>
     </section>
 
-    <section class="mx-auto w-1/2 text-center mt-10" data-aos="fade-up">
+    <section class="mx-auto md:w-1/2 lg:w-1/2 large:w-1/2 wide:w-1/2 w-11/12 text-center mt-10" data-aos="fade-up">
         <a href="http://wa.me/628113800988" class="flex items-center justify-center bg-green-950 hover:bg-green-900 mx-auto w-36">
             <span class="px-2 text-white ms-1">Chat with Us</span>
             <span class="p-2">
@@ -77,7 +77,7 @@
             </span>
         </a>
         <h2 class="sub-title2 mt-10">Press & Media Partnership</h2>
-        <span>media@hanginggardensinternational.com</span>
+        <span class="text-center">media@hanginggardensinternational.com</span>
     </section>
 
     <section class="mt-24" data-aos="fade-up">

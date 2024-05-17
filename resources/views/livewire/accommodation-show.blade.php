@@ -62,7 +62,7 @@
 
     <section class="bg-gray-200/50">
         <div class="villa">
-            <div class="lg:pe-5 md:px-10">
+            <div class="lg:pe-5 px-5 md:px-10 order-2 md:order-2 lg:order-1 large:order-1 wide:order-1">
                 <h2 class="sub-title" data-aos="fade-up">Features</h2>
                 <div class="line ms-0" data-aos="fade-up"></div>
                 <div class="grid grid-cols-2 gap-4 mt-5 mb-16" data-aos="fade-up">
@@ -75,7 +75,7 @@
                 </div>
                 <a href="https://book-directonline.com/properties/hanginggardensofbalidirect" class="main-button px-10 py-5" data-aos="fade-up">Book Now</a>
             </div>
-            <div class="md:mt-24">
+            <div class="md:mt-24 order-1 md:order-1 lg:order-2 large:order-2 wide:order-2 mb-24">
                 <div class="main-slider">
                     @foreach ($accommodation->Images as $data)
                     <div class="slide px-2">

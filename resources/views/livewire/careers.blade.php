@@ -53,13 +53,13 @@
 @section('header')
 <header class="slick-carousel shadow-xl">
     <div>
-        <div class="head-slider">
+        <div class="h-slider">
             <img src="{{asset('images/placeholder/horizontal.webp')}}" data-src="{{asset('storage/'.$page->hero_image)}}" class="lazy w-full h-full object-cover" alt="{{$page->meta_title}}">
         </div>
     </div>
     @foreach ($page->images as $data)
     <div wire:key="{{ $data->id }}">
-        <div class="head-slider">
+        <div class="h-slider">
             <img src="{{asset('images/placeholder/horizontal.webp')}}" data-src="{{asset('storage/'.$data->image)}}" class="lazy w-full h-full object-cover" alt="{{$data->title}}">
         </div>
     </div>

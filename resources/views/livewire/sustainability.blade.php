@@ -18,13 +18,13 @@
 @section('header')
 <header class="slick-carousel shadow-xl">
     <div>
-        <div class="head-slider">
+        <div class="h-slider">
             <img src="{{asset('images/placeholder/horizontal.webp')}}" data-src="{{asset('storage/'.$page->hero_image)}}" class="lazy w-full h-full object-cover" alt="{{$page->meta_title}}">
         </div>
     </div>
     @foreach ($page->images as $data)
     <div wire:key="{{ $data->id }}">
-        <div class="head-slider">
+        <div class="h-slider">
             <img src="{{asset('images/placeholder/horizontal.webp')}}" data-src="{{asset('storage/'.$data->image)}}" class="lazy w-full h-full object-cover" alt="{{$data->title}}">
         </div>
     </div>
@@ -41,7 +41,7 @@
         </div>
     </section>
 
-    <section class="w-1/2 wide:w-1/2 large:w-1/2 md:w-10/12 mx-auto flex justify-between mb-24">
+    <section class="w-11/12 lg:w-10/12 wide:w-1/2 large:w-1/2 md:w-10/12 mx-auto flex flex-col md:flex-row lg:flex-row large:flex-row wide:flex-row justify-between mb-24">
         <div class="w-full p-2">
             <iframe width="100%" height="450" src="https://www.youtube.com/embed/Znvc4anarMc?si=aTC6s-Q5-9uInljI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
         </div>

@@ -31,7 +31,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/js/all.min.js"></script>
-    <script src="https://polyfill.io/v3/polyfill.min.js?features=IntersectionObserver"></script>
     <script src="{{asset('js/main.js')}}"></script>
 
     @livewireScripts

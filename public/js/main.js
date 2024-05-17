@@ -42,50 +42,35 @@ $(document).ready(function () {
     });
 });
 
-// $(document).ready(function () {
-//     function lazyLoad() {
-//         $(".lazy").each(function () {
-//             var imagePos = $(this).offset().top;
-//             var windowHeight = $(window).height();
-//             var topOfWindow = $(window).scrollTop();
-//             if (imagePos < topOfWindow + windowHeight + 100) {
-//                 $(this).attr("src", $(this).attr("data-src"));
-//                 $(this).removeClass("lazy");
-//             }
-//         });
-//     }
-//     lazyLoad();
-//     $(window).scroll(function () {
-//         lazyLoad();
-//     });
-// });
-
 $(document).ready(function () {
-    // Lazy load images
-    var lazyImages = [].slice.call(document.querySelectorAll("img.lazy"));
-    if ("IntersectionObserver" in window) {
-        let lazyImageObserver = new IntersectionObserver(function (
-            entries,
-            observer,
-        ) {
-            entries.forEach(function (entry) {
-                if (entry.isIntersecting) {
-                    let lazyImage = entry.target;
-                    lazyImage.src = lazyImage.dataset.src;
-                    lazyImage.classList.remove("lazy");
-                    lazyImageObserver.unobserve(lazyImage);
-                }
-            });
-        });
-
-        lazyImages.forEach(function (lazyImage) {
-            lazyImageObserver.observe(lazyImage);
-        });
-    } else {
-        // Fallback for older browsers
-        lazyImages.forEach(function (lazyImage) {
-            lazyImage.src = lazyImage.dataset.src;
-            lazyImage.classList.remove("lazy");
+    function lazyLoad() {
+        $(".lazy").each(function () {
+            var imagePos = $(this).offset().top;
+            var windowHeight = $(window).height();
+            var topOfWindow = $(window).scrollTop();
+            if (imagePos < topOfWindow + windowHeight + 100) {
+                $(this).attr("src", $(this).attr("data-src"));
+                $(this).removeClass("lazy");
+            }
         });
     }
+    lazyLoad();
+    $(window).scroll(function () {
+        lazyLoad();
+    });
+});
+
+$(document).ready(function () {
+    $(".main-fab").click(function (e) {
+        e.preventDefault();
+        $(".fab-menu").slideToggle(200);
+        $(".close-button").fadeToggle(200);
+    });
+
+    $(".close-button").click(function (e) {
+        e.preventDefault();
+        $(".fab-menu").slideUp(200);
+        $(".main-fab").fadeOut(200);
+        $(this).fadeOut(200);
+    });
 });

@@ -31,7 +31,7 @@
 @section('header')
 <header class="slick-carousel shadow-xl">
     <div>
-        <div class="head-slider">
+        <div class="h-slider">
             <img src="{{asset('images/placeholder/horizontal.webp')}}" data-src="{{asset('storage/'.$page->hero_image)}}" class="lazy w-full h-full object-cover" alt="{{$page->meta_title}}">
         </div>
     </div>
@@ -48,11 +48,11 @@
     </section>
 
     @foreach ($press_rooms as $data)
-    <section class="mx-auto w-8/12 border-b border-gray-200 mb-10 pb-5" wire:key="{{$data->id}}" data-aos="fade-up">
+    <section class="fusion-card" wire:key="{{$data->id}}" data-aos="fade-up">
         <h2 class="sub-title2 uppercase mb-5">{{$data->title}}</h2>
-        <div class="flex">
-            <img class="lazy h-32 w-32 object-cover" src="{{asset('images/placeholder/horizontal.webp')}}" data-src="{{asset('storage/'.$data->image)}}" alt="Placeholder Image">
-            <div class="ps-5">
+        <div class="flex flex-col md:flex-row lg:flex-row large:flex-row wide:flex-row">
+            <img class="lazy f-c-image" src="{{asset('images/placeholder/horizontal.webp')}}" data-src="{{asset('storage/'.$data->image)}}" alt="Placeholder Image">
+            <div class="ps-0 md:ps-5 lg:ps-5 large:ps-5 wide:ps-5">
                 {{$data->excerpt}}
             </div>
         </div>

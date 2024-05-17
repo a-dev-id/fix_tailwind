@@ -37,6 +37,71 @@
     transform: translateX(0);
 }
 
+.fab-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 50;
+}
+.fab-icon {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+.fab-icon:hover {
+    transform: scale(1.1);
+}
+.fab-menu {
+    display: none;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+.fab-menu a {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+.close-button {
+    display: none;
+    position: fixed;
+    bottom: 66px;
+    right: 70px;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: #e53e3e;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    cursor: pointer;
+    font-size: 8px;
+}
+
+.cookie-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #2d3748; /* gray-800 */
+    color: #fff; /* white */
+    padding: 15px;
+    z-index: 50;
+    transform: translateY(0);
+    transition: transform 0.3s;
+}
+
 @layer components {
     .lazy {
         @apply opacity-0 transition-opacity duration-300 ease-in-out;
@@ -153,7 +218,7 @@
 
 @layer components {
     .sub-title2 {
-        @apply mt-8 font-sans text-xl tracking-wide md:text-lg large:text-lg wide:text-2xl;
+        @apply mt-8 font-sans text-lg tracking-wide md:text-lg lg:text-xl large:text-lg wide:text-2xl;
     }
 }
 
@@ -219,31 +284,31 @@
 
 @layer components {
     .vi-section {
-        @apply mx-auto flex flex-col overflow-hidden md:w-11/12 md:flex-row lg:flex-row large:w-8/12 large:flex-row wide:w-8/12 wide:flex-row;
+        @apply mx-auto flex w-9/12 flex-col overflow-hidden md:w-11/12 md:flex-row lg:flex-row large:w-8/12 large:flex-row wide:w-8/12 wide:flex-row;
     }
 }
 
 @layer components {
     .vi-page {
-        @apply mx-auto flex overflow-hidden md:flex md:w-9/12 md:flex-col lg:w-11/12 lg:flex-row large:flex large:w-8/12 wide:flex wide:w-8/12;
+        @apply mx-auto flex w-10/12 flex-col overflow-hidden md:flex md:w-10/12 md:flex-col lg:w-11/12 lg:flex-row large:flex large:w-8/12 wide:flex wide:w-8/12;
     }
 }
 
 @layer components {
     .vi-image {
-        @apply h-auto w-full object-cover px-6 pb-8 md:h-[400px] md:w-[350px] md:px-0 md:pb-0 lg:w-[550px] lg:px-0 lg:pb-0 large:h-auto large:w-[550px] large:px-0 large:pb-0 wide:h-auto wide:w-[800px] wide:px-0 wide:pb-0;
+        @apply h-auto w-full object-cover px-0 pb-8 md:h-[400px] md:w-[350px] md:px-0 md:pb-0 lg:w-[550px] lg:px-0 lg:pb-0 large:h-auto large:w-[550px] large:px-0 large:pb-0 wide:h-auto wide:w-[800px] wide:px-0 wide:pb-0;
     }
 }
 
 @layer components {
     .vi-image-page {
-        @apply h-auto w-[800px] object-cover md:h-[400px] md:w-auto lg:h-auto lg:w-[550px] large:h-auto large:w-[550px] wide:h-auto wide:w-[800px];
+        @apply h-[400px] w-[800px] object-cover md:h-[400px] md:w-auto lg:h-auto lg:w-[550px] large:h-auto large:w-[550px] wide:h-auto wide:w-[800px];
     }
 }
 
 @layer components {
     .vi-text {
-        @apply mx-8 flex flex-col justify-center border-y border-gray-600 p-5 text-center large:mx-8 wide:mx-14;
+        @apply mx-0 flex flex-col justify-center border-y border-gray-600 p-0 px-3 py-8 text-center md:mx-3 md:p-5 md:py-5 lg:mx-8 lg:p-5 lg:py-0 large:mx-8 large:p-5 large:py-0 wide:mx-14 wide:p-5 wide:py-0;
     }
 }
 
@@ -399,7 +464,7 @@
 
 @layer components {
     .footer-section {
-        @apply mx-auto w-11/12 md:w-11/12 large:w-4/6 wide:w-4/6;
+        @apply mx-auto w-10/12 md:w-11/12 large:w-4/6 wide:w-4/6;
     }
 }
 
@@ -471,19 +536,19 @@
 
 @layer components {
     .secondary-button {
-        @apply font-arial mt-10 px-10 text-sm font-bold uppercase tracking-[2px] large:px-6 large:py-2 large:text-[10px] large:tracking-widest wide:px-10 wide:py-4 wide:text-xs wide:tracking-widest;
+        @apply font-arial mt-3 px-10 py-3 text-center text-sm font-bold uppercase tracking-[2px] md:mt-3 lg:mt-10 lg:py-3 lg:text-[10px] large:mt-10 large:px-6 large:py-2 large:text-[10px] large:tracking-widest wide:mt-10 wide:px-10 wide:py-4 wide:text-xs wide:tracking-widest;
     }
 }
 
 @layer components {
     .secondary-button.transparent {
-        @apply outline outline-1 outline-gray-600 hover:bg-[#a88444] hover:text-white hover:outline-[#a88444];
+        @apply bg-transparent text-black outline outline-1 outline-black hover:bg-[#a88444] hover:text-white hover:outline-[#a88444];
     }
 }
 
 @layer components {
     .secondary-button.black {
-        @apply bg-black py-2 text-white outline outline-1 outline-black hover:bg-[#a88444] hover:text-white hover:outline-[#a88444] md:py-4;
+        @apply bg-black text-white outline outline-1 outline-black hover:bg-[#a88444] hover:text-white hover:outline-[#a88444];
     }
 }
 
@@ -514,7 +579,7 @@
 
 @layer components {
     .o-right {
-        @apply flex w-11/12 flex-col justify-between px-10 md:w-2/4 large:w-2/3 wide:w-2/3;
+        @apply flex w-11/12 flex-col justify-between pl-10 pr-1 md:w-2/4 large:w-2/3 wide:w-2/3;
     }
 }
 
@@ -532,12 +597,24 @@
 
 @layer components {
     .villa {
-        @apply mx-auto grid h-auto w-8/12 content-start items-center py-20 md:w-11/12 md:grid-cols-1 lg:grid-cols-2 large:w-8/12 large:grid-cols-2 wide:w-8/12 wide:grid-cols-2;
+        @apply mx-auto grid h-auto w-11/12 grid-cols-1 content-start items-center py-20 md:w-11/12 md:grid-cols-1 lg:grid-cols-2 large:w-8/12 large:grid-cols-2 wide:w-8/12 wide:grid-cols-2;
     }
 }
 
 @layer components {
     .restaurant {
-        @apply mx-auto w-8/12 py-10 md:w-11/12 large:w-8/12 wide:w-8/12;
+        @apply mx-auto w-11/12 py-10 md:w-11/12 lg:w-8/12 large:w-8/12 wide:w-8/12;
+    }
+}
+
+@layer components {
+    .fusion-card {
+        @apply mx-auto mb-10 w-10/12 border-b border-gray-200 pb-5 md:w-8/12 lg:w-8/12 large:w-8/12 wide:w-8/12;
+    }
+}
+
+@layer components {
+    .f-c-image {
+        @apply mb-5 h-auto w-auto object-cover md:mb-0 md:h-32 md:w-32 lg:mb-0 lg:h-32 lg:w-32 large:mb-0 large:h-32 large:w-32 wide:mb-0 wide:h-32 wide:w-32;
     }
 }

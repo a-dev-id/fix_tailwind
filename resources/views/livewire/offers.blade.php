@@ -54,9 +54,9 @@
                         {{$data->excerpt}}
                     </div>
                 </div>
-                <div class="flex flex-col mb-1 large:flex-row wide:flex-row md:flex-col">
-                    <a href="{{$data->button_value}}" class="secondary-button black me-4 md:py-3 text-center md:text-center md:mt-0">{{$data->button_label}}</a>
-                    <a href="{{route('offers.show', [$data->slug])}}" class="secondary-button transparent me-4 py-2.5 md:py-3 text-center md:text-center mt-2 md:mt-5 lg:mt-5 large:mt-0 wide:mt-0">VIEW DETAIL</a>
+                <div class="flex flex-col mb-1 md:flex-col lg:flex-row large:flex-row wide:flex-row">
+                    <a href="{{$data->button_value}}" class="secondary-button black mr-0 md:mr-0 lg:mr-5 large:mr-5 wide:mr-5">{{$data->button_label}}</a>
+                    <a href="{{route('offers.show', [$data->slug])}}" class="secondary-button transparent">VIEW DETAIL</a>
                 </div>
             </div>
         </div>
