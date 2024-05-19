@@ -35,7 +35,7 @@ class SettingResource extends Resource
                                 Forms\Components\TextInput::make('name')->required(),
                                 Forms\Components\Grid::make()
                                     ->schema([
-                                        Forms\Components\TextInput::make('title')->required()->lazy()->afterStateUpdated(fn (Set $set, ?string $state) => $set('slug', Str::slug($state))),
+                                        Forms\Components\TextInput::make('title')->lazy()->afterStateUpdated(fn (Set $set, ?string $state) => $set('slug', Str::slug($state))),
                                         Forms\Components\TextInput::make('slug')->hint(new HtmlString('<i>Auto generated</i>')),
                                     ])
                                     ->columnSpan(1),

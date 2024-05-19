@@ -47,6 +47,7 @@ class OfferResource extends Resource
                             ->schema([
                                 Forms\Components\Select::make('layout')
                                     ->options([
+                                        'featured' => 'Featured',
                                         'visual-insights' => 'Visual Insights',
                                         'dual-perspectives' => 'Dual Perspectives',
                                         'visual-harmony' => 'Visual Harmony',

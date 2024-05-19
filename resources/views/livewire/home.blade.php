@@ -21,21 +21,24 @@
     <div>
         <div class="relative h-screen">
             <iframe class="header-iframe-youtube large:h-[130%]" src="https://www.youtube.com/embed/videoseries?si=TH-ZPdkwmLoLEqLV&list=PLw8fGZ6fiQLBb2euaUmC02VZXij30jhcN&autoplay=1&mute=1&controls=0&loop=1&rel=0&showinfo=0&iv_load_policy=3&playlist=9RA48trBz24" frameborder="0" allowfullscreen></iframe>
+            {{-- <div id="video-container" class="video-background header-iframe-youtube large:h-[130%]"></div> --}}
         </div>
     </div>
 </header>
+
+<div id="video-container" class="video-background"></div>
 
 {{-- slider mobile --}}
 <header class="slick-carousel shadow-xl md:block large:hidden wide:hidden">
     <div>
         <div class="h-slider">
-            <img src="{{asset('images/placeholder/horizontal.webp')}}" data-src="{{asset('storage/'.$page->hero_image)}}" class="lazy w-full h-full object-cover" alt="Image 2">
+            <img fetchpriority="high" src="{{asset('storage/'.$page->hero_image)}}" class="w-full h-full object-cover" alt="Image 2">
         </div>
     </div>
     @foreach ($page->images as $data)
     <div wire:key="{{ $data->id }}">
         <div class="h-slider">
-            <img src="{{asset('images/placeholder/horizontal.webp')}}" data-src="{{asset('storage/'.$data->image)}}" class="lazy w-full h-full object-cover" alt="Image 2">
+            <img fetchpriority="high" src="{{asset('storage/'.$data->image)}}" class="w-full h-full object-cover" alt="Image 2">
         </div>
     </div>
     @endforeach
@@ -184,4 +187,5 @@
             </div>
         </div>
     </section>
+</main>
 </main>

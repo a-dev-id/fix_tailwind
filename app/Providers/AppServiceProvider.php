@@ -40,6 +40,7 @@ class AppServiceProvider extends ServiceProvider
         $wa_link = Setting::where('status', 1)->where('id', '9')->first();
         $tripadvisor = Setting::where('status', 1)->where('id', '10')->first();
         $telegram = Setting::where('status', 1)->where('id', '11')->first();
+        $booking_engine = Setting::where('status', 1)->where('id', '12')->first();
 
         View::share('instagram', $instagram);
         View::share('facebook', $facebook);
@@ -52,5 +53,6 @@ class AppServiceProvider extends ServiceProvider
         View::share('wa_link', $wa_link);
         View::share('tripadvisor', $tripadvisor);
         View::share('telegram', $telegram);
+        View::share('booking_engine', $booking_engine);
     }
 }

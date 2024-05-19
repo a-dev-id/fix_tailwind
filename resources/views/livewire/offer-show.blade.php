@@ -32,11 +32,32 @@
         <div class="mt-4 large:mt-3 wide:mt-4 mb-14">
             {!!$offer->description!!}
         </div>
-        <a href="{{$offer->button_value}}" class="secondary-button black">{{$offer->button_label}}</a>
+        @if ($offer->button_value == null)
+        <a href="{{$booking_engine->button_value}}&promocode={{$offer->promo_code}}&checkInDate={{date('Y-m-d')}}&checkOutDate={{date('Y-m-d',strtotime('+'.$offer->min_night.' days'))}}&currency=USD" class="secondary-button black" target="_blank">{{$offer->button_label}}</a>
+        @elseif ($offer->button_value == 'Featured')
+        @else
+        <a href="{{$offer->button_value}}" class="secondary-button black" target="_blank">{{$offer->button_label}}</a>
+        @endif
     </section>
 
     @foreach ($offer->offerfields as $data)
-    @if ($data->layout == 'visual-insights')
+    @if ($data->layout == 'featured')
+    <section class="featured" data-aos="fade-up" data-aos-delay="200">
+        <div class="content-carousel">
+            <div class="max-w-xl mx-3 mb-16 text-center">
+                <div class="overflow-hidden">
+                    <div class="p-4">
+                        <h2 class="card-title">{{$data->title}}</h2>
+                        {!!$data->excerpt!!}
+                    </div>
+                    <div class="card-footer mb-10 mx-auto flex justify-center">
+                        <a href="{{$booking_engine->button_value}}&promocode={{$data->button_value}}&checkInDate={{date('Y-m-d')}}&checkOutDate={{date('Y-m-d',strtotime('+'.$data->button_label.' days'))}}&currency=USD" class="secondary-button black" class="mx-auto text-[10px] md:text-base lg:text-base large:text-base wide:text-base font-bold" target="_blank">Book Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    @elseif ($data->layout == 'visual-insights')
     <section class="visual-insights">
         <div class="vi-section" data-aos="fade-up" data-aos-delay="200">
             <img class="lazy vi-image" src="{{asset('images/placeholder/horizontal.webp')}}" data-src="{{asset('storage/'.$data->main_image)}}" alt="Placeholder Image">

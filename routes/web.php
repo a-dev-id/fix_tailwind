@@ -19,6 +19,7 @@ use App\Livewire\PressRoom;
 use App\Livewire\Story;
 use App\Livewire\StoryShow;
 use App\Livewire\Sustainability;
+use App\Livewire\ThankYou;
 
 Route::get('/', Home::class)->name('index');
 Route::get('/offers', Offers::class)->name('offers.index');
@@ -38,3 +39,4 @@ Route::get('/policy-legal', PolicyLegal::class)->name('policy-legal.index');
 Route::get('/story', Story::class)->name('story.index');
 Route::get('/story/{slug}', StoryShow::class)->name('story.show');
 Route::get('/careers', Careers::class)->name('careers.index');
+Route::get('/thank-you', ThankYou::class)->name('thank-you.index');

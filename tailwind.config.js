@@ -13,8 +13,12 @@ module.exports = {
             fontFamily: {
                 sans: ["Figtree", ...defaultTheme.fontFamily.sans],
             },
+            screens: {
+                wide: "1920px",
+                large: "1366px",
+            },
         },
     },
 
-    plugins: [require("@tailwindcss/forms")],
+    plugins: [],
 };

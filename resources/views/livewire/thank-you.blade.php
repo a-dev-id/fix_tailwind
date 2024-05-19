@@ -34,37 +34,11 @@
 
 <main>
     {{-- page description section --}}
-    <section class="page-description" data-aos="fade-up">
+    <section class="page-description mb-24" data-aos="fade-up">
         <h1 class="main-title">{{$page->title}}</h1>
         <div class="mt-4 large:mt-3 wide:mt-4">
             {!!$page->description!!}
         </div>
     </section>
 
-    @foreach ($offers as $data)
-    <section class="{{$loop->iteration%2 == 1 ? 'bg-gray-200/50 py-20 my-20' : 'my-20'}}" wire:key="{{ $data->id }}" data-aos="fade-up" data-aos-delay="200">
-        <div class="offer">
-            <div class="o-left">
-                <img src="{{asset('images/placeholder/horizontal.webp')}}" data-src="{{asset('storage/'.$data->hero_image)}}" alt="Sample Image" class="o-l-image lazy">
-            </div>
-            <div class="o-right">
-                <div class="mt-1">
-                    <h2 class="sub-title">{{$data->title}}</h2>
-                    <div class="paragraph">
-                        {{$data->excerpt}}
-                    </div>
-                </div>
-                <div class="flex flex-col mb-1 md:flex-col lg:flex-row large:flex-row wide:flex-row">
-                    @if ($data->button_value == null)
-                    <a href="{{$booking_engine->button_value}}&promocode={{$data->promo_code}}&checkInDate={{date('Y-m-d')}}&checkOutDate={{date('Y-m-d',strtotime('+'.$data->min_night.' days'))}}&currency=USD" class="secondary-button black mr-0 md:mr-0 lg:mr-5 large:mr-5 wide:mr-5" target="_blank">{{$data->button_label}}</a>
-                    @elseif ($data->button_value == 'Featured')
-                    @else
-                    <a href="{{$data->button_value}}" class="secondary-button black mr-0 md:mr-0 lg:mr-5 large:mr-5 wide:mr-5" target="_blank">{{$data->button_label}}</a>
-                    @endif
-                    <a href="{{route('offers.show', [$data->slug])}}" class="secondary-button transparent">VIEW DETAIL</a>
-                </div>
-            </div>
-        </div>
-    </section>
-    @endforeach
 </main>
