@@ -47,7 +47,7 @@
 
 <main>
     {{-- page description section --}}
-    <section class="page-description" data-aos="fade-up">
+    <section class="page-description">
         <h1 class="main-title">{{$page->title}}</h1>
         <div class="mt-4 large:mt-3 wide:mt-4">
             {!!$page->description!!}
@@ -57,7 +57,7 @@
     <section class="bg-gray-200/50 mt-24">
         <div class="restaurant">
             <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 large:grid-cols-3 wide:grid-cols-3">
-                <div class="flex flex-col" data-aos="fade-up" data-aos-delay="200">
+                <div class="flex flex-col">
                     <h3 class="footer-title text-xs tracking-wide font-bold">restaurant information</h3>
                     <div class="font-bold mt-5">Cuisine:</div>
                     <span>Western and Indonesian</span>
@@ -66,7 +66,7 @@
                     <span>Restaurant: 7:00am to 11:00pm</span>
                     <span>Pool: 7:00am to 7:00pm</span>
                 </div>
-                <div class="flex flex-col pr-6 md:pr-14 lg:pr-10 large:pr-20 wide:pr-40" data-aos="fade-up" data-aos-delay="200">
+                <div class="flex flex-col pr-6 md:pr-14 lg:pr-10 large:pr-20 wide:pr-40">
                     <h3 class="footer-title text-xs tracking-wide font-bold">additional information</h3>
                     <button id="open-modal" class="secondary-button black text-[10px] px-2">RESERVE NOW</button>
                     <a href="https://drive.google.com/file/d/1qSigrT4UO5Q8WTp36tUc_e2CwzJXKff4/view?usp=sharing" target="_blank" class="secondary-button transparent text-[10px] px-2 mt-2 md:mt-2 lg:mt-3 large:mt-3 wide:mt-3">VIEW MENU</a>
@@ -85,7 +85,7 @@
                     </div>
                 </div>
 
-                <div class="flex flex-col" data-aos="fade-up" data-aos-delay="200">
+                <div class="flex flex-col">
                     <h3 class="footer-title text-xs tracking-wide font-bold mt-16 md:mt-0 lg:mt-0 large:mt-0 wide:mt-0">reservations</h3>
                     <div class="font-bold mt-5">Contact Us:</div>
                     <a href="{{$phone->button_value}}">{!!$phone->description!!}</a>
@@ -99,13 +99,13 @@
 
     <section class="dual-perspectives ">
         <div class="dp-section">
-            <div class="dp-left" data-aos="fade-up" data-aos-delay="200">
+            <div class="dp-left">
                 <div class="pb-6">
                     <h2 class="sub-title">{{$section_one->title}}</h2>
                 </div>
                 <img class="lazy dp-l-image" src="{{asset('images/placeholder/vertical.webp')}}" data-src="{{asset('storage/'.$section_one->hero_image)}}" alt="Card Image">
             </div>
-            <div class="dp-right" data-aos="fade-up" data-aos-delay="400">
+            <div class="dp-right">
                 <img class="lazy dp-r-image" src="{{asset('images/placeholder/vertical.webp')}}" data-src="{{asset('storage/'.$section_one->cover_image)}}" alt="Card Image">
                 <div>
                     {{-- <h3 class="sub-title2">Ultimate Millionaire Hangout</h3> --}}
@@ -121,7 +121,7 @@
 
     <section class="visual-harmony">
         <div class="vh-background" style="background-image: url({{asset('storage/'.$section_two->hero_image)}})"></div>
-        <div class="vh-section" data-aos="fade-up" data-aos-delay="300">
+        <div class="vh-section">
             <div class="vh-inner-section">
                 <div class="vh-text">
                     <h2 class="sub-title">{{$section_two->title}}</h2>

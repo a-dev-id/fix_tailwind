@@ -34,7 +34,7 @@
 
 <main>
     {{-- page description section --}}
-    <section class="page-description" data-aos="fade-up">
+    <section class="page-description">
         <h1 class="main-title">{{$page->title}}</h1>
         <div class="mt-4 large:mt-3 wide:mt-4">
             {!!$page->description!!}
@@ -43,13 +43,13 @@
 
     <section class="dual-perspectives">
         <div class="dp-section">
-            <div class="dp-left" data-aos="fade-up" data-aos-delay="200">
+            <div class="dp-left">
                 <div class="pb-6">
                     <h2 class="sub-title">{{$villa_satu->subtitle}}</h2>
                 </div>
                 <img class="lazy dp-l-image" src="{{asset('images/placeholder/vertical.webp')}}" data-src="{{asset('storage/'.$villa_satu->cover_image)}}" alt="{{$villa_satu->subtitle}}">
             </div>
-            <div class="dp-right" data-aos="fade-up" data-aos-delay="400">
+            <div class="dp-right">
                 <img class="lazy dp-r-image" src="{{asset('images/placeholder/vertical.webp')}}" data-src="{{asset('storage/'.$villa_satu->hero_image)}}" alt="{{$villa_satu->title}}">
                 <div>
                     <h3 class="sub-title2">{{$villa_satu->title}}</h3>
@@ -63,7 +63,7 @@
         </div>
     </section>
 
-    <section class="featured mt-10" data-aos="fade-up" data-aos-delay="200">
+    <section class="featured mt-10">
         <div class="content-carousel">
 
             @foreach ($villa_list as $data)
@@ -77,7 +77,7 @@
                         </div>
                     </div>
                     <div class="card-footer">
-                        <a href="{{route('accommodations.show', $data->slug)}}">Explore</a>
+                        <a href="{{route('accommodations.show', $data->slug)}}" class="text-[10px] md:text-base lg:text-[11px] large:text-base wide:text-base font-bold">Explore</a>
                     </div>
                 </div>
             </div>
@@ -88,7 +88,7 @@
 
     <section class="visual-harmony mt-0 md:mt-24 lg:mt-24 large:mt-24 wide:mt-24">
         <div class="vh-background" style="background-image: url('{{asset('storage/'.$villa_dua->cover_image)}}')"></div>
-        <div class="vh-section" data-aos="fade-up">
+        <div class="vh-section">
             <div class="vh-inner-section">
                 <div class="vh-text">
                     <h2 class="sub-title">{{$villa_dua->title}}</h2>

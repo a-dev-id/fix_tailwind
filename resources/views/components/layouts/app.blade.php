@@ -9,7 +9,7 @@
     @yield('meta')
 
     <meta name="google-site-verification" content="">
-    <link href="path/to/favicon.ico" type="image/x-icon" rel="icon">
+    <link href="{{asset('images/favicon-hgob.png')}}" type="image/x-icon" rel="icon">
 
     <link href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css" rel="stylesheet" />
     <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">

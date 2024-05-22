@@ -2,7 +2,7 @@
     <div class="footer-section">
         <div class="footer-main">
             <div class="pe-10 flex items-center">
-                <img src="{{asset('images/placeholder/horizontal.webp')}}" data-src="https://hanginggardensofbali.com/images/logo/Logo-02-HGOB.png" class="lazy footer-logo" alt="">
+                <img src="{{asset('images/placeholder/horizontal.webp')}}" data-src="{{asset('images/logo.png')}}" class="lazy footer-logo" alt="">
             </div>
             <div class="pe-5">
                 <h3 class="footer-title">Address</h3>

@@ -53,7 +53,7 @@
 
 <main>
     {{-- page description section --}}
-    <section class="page-description mb-24" data-aos="fade-up">
+    <section class="page-description mb-24">
         <h1 class="main-title">{{$accommodation->title}}</h1>
         <div class="mt-4 large:mt-3 wide:mt-4">
             {!!$accommodation->description!!}
@@ -63,9 +63,9 @@
     <section class="bg-gray-200/50">
         <div class="villa">
             <div class="lg:pe-5 px-5 md:px-10 order-2 md:order-2 lg:order-1 large:order-1 wide:order-1">
-                <h2 class="sub-title" data-aos="fade-up">Features</h2>
-                <div class="line ms-0" data-aos="fade-up"></div>
-                <div class="grid grid-cols-2 gap-4 mt-5 mb-16" data-aos="fade-up">
+                <h2 class="sub-title">Features</h2>
+                <div class="line ms-0"></div>
+                <div class="grid grid-cols-2 gap-4 mt-5 mb-16">
                     @foreach ($accommodation->facilities as $data)
                     <div class="flex items-center" wire:key="{{ $data->id }}">
                         <img src="{{asset('storage/'.$data->image)}}" class="h-6 w-6 me-2">
@@ -73,7 +73,7 @@
                     </div>
                     @endforeach
                 </div>
-                <a href="https://book-directonline.com/properties/hanginggardensofbalidirect" class="main-button px-10 py-5" data-aos="fade-up">Book Now</a>
+                <a href="https://book-directonline.com/properties/hanginggardensofbalidirect" class="main-button px-10 py-5">Book Now</a>
             </div>
             <div class="md:mt-24 order-1 md:order-1 lg:order-2 large:order-2 wide:order-2 mb-24">
                 <div class="main-slider">
@@ -96,7 +96,7 @@
         </div>
     </section>
 
-    <section class="featured my-24" data-aos="fade-up" data-aos-delay="200">
+    <section class="featured my-24">
         <h3 class="sub-title text-center mb-16">YOU MAY ALSO LIKE</h3>
         <div class="content-carousel">
             @foreach ($villa_list as $data)
@@ -110,7 +110,7 @@
                         </div>
                     </div>
                     <div class="card-footer">
-                        <a href="{{route('accommodations.show', $data->slug)}}">Explore</a>
+                        <a href="{{route('accommodations.show', $data->slug)}}" class="text-[10px] md:text-base lg:text-[11px] large:text-base wide:text-base font-bold">Explore</a>
                     </div>
                 </div>
             </div>

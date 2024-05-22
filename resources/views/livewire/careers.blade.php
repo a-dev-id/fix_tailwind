@@ -69,7 +69,7 @@
 
 <main>
     {{-- page description section --}}
-    <section class="page-description mb-24" data-aos="fade-up">
+    <section class="page-description mb-24">
         <h1 class="main-title">{{$page->title}}</h1>
         <div class="mt-4 large:mt-3 wide:mt-4">
             {!!$page->description!!}
@@ -77,7 +77,7 @@
     </section>
 
     @foreach ($careers as $data)
-    <section class="mx-auto w-8/12 border-b border-gray-200 mb-10 pb-5" wire:key="{{$data->id}}" data-aos="fade-up">
+    <section class="mx-auto w-8/12 border-b border-gray-200 mb-10 pb-5" wire:key="{{$data->id}}">
         <h2 class="sub-title2 uppercase">{{$data->title}}</h2>
         <div class="text-[#a88444] pt-3 pb-4 text-lg">{{$data->subtitle}}</div>
         <div class="flex">
@@ -99,7 +99,7 @@
     </section>
 
     <div id="modal{{$data->id}}" class="fixed inset-0 bg-gray-900 bg-opacity-50 flex items-center justify-center hidden z-[999]">
-        <div class="bg-white p-6 rounded-lg shadow-lg w-full max-w-lg max-h-full overflow-auto relative" id="modal-content{{$data->id}}">
+        <div class="bg-white p-6 rounded-lg shadow-lg w-full max-w-lg max-h-[550px] lg:max-w-4xl lg:max-h-[550px] overflow-auto relative" id="modal-content{{$data->id}}">
             <button id="close-modal{{$data->id}}" class="absolute top-2 right-2 text-gray-400 hover:text-gray-600">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />

@@ -34,7 +34,7 @@
 
 <main>
     {{-- page description section --}}
-    <section class="page-description mb-16" data-aos="fade-up">
+    <section class="page-description mb-16">
         <h1 class="main-title">{{$page->title}}</h1>
         <div class="mt-4 large:mt-3 wide:mt-4">
             {!!$page->description!!}
@@ -42,7 +42,7 @@
     </section>
 
     <section class="grid grid-cols-1 gap-10 md:gap-10 lg:gap-0 large:gap-0 wide:gap-0 md:grid-cols-1 lg:grid-cols-3 large:grid-cols-3 wide:grid-cols-3 md:w-11/12 lg:w-9/12 large:w-1/2 wide:w-1/2 w-11/12 mx-auto">
-        <div data-aos="fade-up">
+        <div>
             <a href="{{$phone->button_value}}" class="text-gray-600 font-arial flex flex-col justify-center items-center text-center">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-14 h-14 wide:w-14 wide:h-14 large:w-12 large:h-12 fill-gray-600">
                     <path fill-rule="evenodd" d="M1.5 4.5a3 3 0 0 1 3-3h1.372c.86 0 1.61.586 1.819 1.42l1.105 4.423a1.875 1.875 0 0 1-.694 1.955l-1.293.97c-.135.101-.164.249-.126.352a11.285 11.285 0 0 0 6.697 6.697c.103.038.25.009.352-.126l.97-1.293a1.875 1.875 0 0 1 1.955-.694l4.423 1.105c.834.209 1.42.959 1.42 1.82V19.5a3 3 0 0 1-3 3h-2.25C8.552 22.5 1.5 15.448 1.5 6.75V4.5Z" clip-rule="evenodd" />
@@ -50,13 +50,13 @@
                 {!!$phone->description!!}
             </a>
         </div>
-        <div class="flex flex-col justify-center items-center text-center" data-aos="fade-up">
+        <div class="flex flex-col justify-center items-center text-center">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-14 h-14 wide:w-14 wide:h-14 large:w-12 large:h-12 fill-gray-600">
                 <path fill-rule="evenodd" d="m11.54 22.351.07.04.028.016a.76.76 0 0 0 .723 0l.028-.015.071-.041a16.975 16.975 0 0 0 1.144-.742 19.58 19.58 0 0 0 2.683-2.282c1.944-1.99 3.963-4.98 3.963-8.827a8.25 8.25 0 0 0-16.5 0c0 3.846 2.02 6.837 3.963 8.827a19.58 19.58 0 0 0 2.682 2.282 16.975 16.975 0 0 0 1.145.742ZM12 13.5a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z" clip-rule="evenodd" />
             </svg>
             <span class="text-gray-600 font-arial">{!!$address->description!!}</span>
         </div>
-        <div data-aos="fade-up">
+        <div>
             <a href="{{$reservations_email->button_value}}" class="text-gray-600 font-arial flex flex-col justify-center items-center text-center">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-14 h-14 wide:w-14 wide:h-14 large:w-12 large:h-12 fill-gray-600">
                     <path d="M1.5 8.67v8.58a3 3 0 0 0 3 3h15a3 3 0 0 0 3-3V8.67l-8.928 5.493a3 3 0 0 1-3.144 0L1.5 8.67Z" />
@@ -67,7 +67,7 @@
         </div>
     </section>
 
-    <section class="mx-auto md:w-1/2 lg:w-1/2 large:w-1/2 wide:w-1/2 w-11/12 text-center mt-10" data-aos="fade-up">
+    <section class="mx-auto md:w-1/2 lg:w-1/2 large:w-1/2 wide:w-1/2 w-11/12 text-center mt-10">
         <a href="http://wa.me/628113800988" class="flex items-center justify-center bg-green-950 hover:bg-green-900 mx-auto w-36">
             <span class="px-2 text-white ms-1">Chat with Us</span>
             <span class="p-2">
@@ -80,7 +80,7 @@
         <span class="text-center">media@hanginggardensinternational.com</span>
     </section>
 
-    <section class="mt-24" data-aos="fade-up">
+    <section class="mt-24">
         <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d37454.313466210835!2d115.23863900000002!3d-8.412754!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd23d467fa63d5f%3A0x1be2fc17d127a6b9!2sHanging%20Gardens%20Of%20Bali!5e1!3m2!1sen!2sus!4v1715603948596!5m2!1sen!2sus" width="100%" height="600" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     </section>
 </main>

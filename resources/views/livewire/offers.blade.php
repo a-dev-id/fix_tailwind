@@ -34,7 +34,7 @@
 
 <main>
     {{-- page description section --}}
-    <section class="page-description" data-aos="fade-up">
+    <section class="page-description">
         <h1 class="main-title">{{$page->title}}</h1>
         <div class="mt-4 large:mt-3 wide:mt-4">
             {!!$page->description!!}
@@ -42,7 +42,7 @@
     </section>
 
     @foreach ($offers as $data)
-    <section class="{{$loop->iteration%2 == 1 ? 'bg-gray-200/50 py-20 my-20' : 'my-20'}}" wire:key="{{ $data->id }}" data-aos="fade-up" data-aos-delay="200">
+    <section class="{{$loop->iteration%2 == 1 ? 'bg-gray-200/50 py-20 my-20' : 'my-20'}}" wire:key="{{ $data->id }}">
         <div class="offer">
             <div class="o-left">
                 <img src="{{asset('images/placeholder/horizontal.webp')}}" data-src="{{asset('storage/'.$data->hero_image)}}" alt="Sample Image" class="o-l-image lazy">

@@ -27,7 +27,7 @@
 
 <main>
     {{-- page description section --}}
-    <section class="page-description mb-24" data-aos="fade-up">
+    <section class="page-description mb-24">
         <h1 class="main-title">{{$blog->title}}</h1>
         <div class="mt-4 large:mt-3 wide:mt-4">
             {!!$blog->description!!}
@@ -37,7 +37,7 @@
     @foreach ($blog->customFields as $data)
     @if ($data->layout == 'visual-insights')
     <section class="visual-insights">
-        <div class="vi-section" data-aos="fade-up" data-aos-delay="200">
+        <div class="vi-section">
             <img class="lazy vi-image" src="{{asset('images/placeholder/horizontal.webp')}}" data-src="{{asset('storage/'.$data->main_image)}}" alt="Placeholder Image">
             <div class="vi-text">
                 <h2 class="sub-title">{{$data->title}}</h2>
@@ -52,13 +52,13 @@
     @elseif ($data->layout == 'dual-perspectives')
     <section class="dual-perspectives">
         <div class="flex justify-center">
-            <div class="dp-left" data-aos="fade-up" data-aos-delay="200">
+            <div class="dp-left" data-aos-delay="200">
                 <div class="pb-6">
                     <h2 class="sub-title">{{$data->title}}</h2>
                 </div>
                 <img class="lazy dp-l-image" src="{{asset('images/placeholder/vertical.webp')}}" data-src="{{asset('storage/'.$data->main_image)}}" alt="Card Image">
             </div>
-            <div class="dp-right" data-aos="fade-up" data-aos-delay="400">
+            <div class="dp-right" data-aos-delay="400">
                 <img class="lazy dp-r-image" src="{{asset('images/placeholder/vertical.webp')}}" data-src="{{asset('storage/'.$data->secondary_image)}}" alt="Card Image">
                 <div>
                     <h3 class="sub-title2">{{$data->subtitle}}</h3>
@@ -75,7 +75,7 @@
     @elseif ($data->layout == 'visual-harmony')
     <section class="visual-harmony">
         <div class="vh-background bg-[url({{asset('storage/'.$data->secondary_image)}})]"></div>
-        <div class="vh-section" data-aos="fade-up" data-aos-delay="300">
+        <div class="vh-section" data-aos-delay="300">
             <div class="vh-inner-section">
                 <div class="vh-text">
                     <h2 class="sub-title">{{$data->title}}</h2>
@@ -93,7 +93,7 @@
     </section>
     @elseif ($data->layout == 'overlay-impression')
     <section class="overlay-impression">
-        <div class="oi-text" data-aos="fade-up" data-aos-delay="200">
+        <div class="oi-text" data-aos-delay="200">
             <div class="oi-section">
                 <h2 class="sub-title">{{$data->title}}</h2>
                 <div class="paragraph">
@@ -104,14 +104,14 @@
                 @endif
             </div>
         </div>
-        <div class="oi-image-section" data-aos="fade-up" data-aos-delay="400">
+        <div class="oi-image-section" data-aos-delay="400">
             <img class="lazy oi-image" src="{{asset('images/placeholder/horizontal.webp')}}" data-src="{{asset('storage/'.$data->main_image)}}" alt="Placeholder Image">
         </div>
     </section>
     @elseif ($data->layout == 'scenics-spotlight')
     <section class="scenics-spotlight">
         <img class="ss-background" src="{{asset('images/placeholder/horizontal.webp')}}" data-src="{{asset('storage/'.$data->main_image)}}" alt="Placeholder Image">
-        <div class="ss-section" data-aos="fade-up" data-aos-delay="500">
+        <div class="ss-section" data-aos-delay="500">
             <div class="ss-text">
                 <h2 class="sub-title">{{$data->title}}</h2>
                 <div class="paragraph">

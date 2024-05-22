@@ -34,7 +34,7 @@
 
 <main>
     {{-- page description section --}}
-    <section class="page-description mb-24" data-aos="fade-up">
+    <section class="page-description mb-24">
         <h1 class="main-title">{{$page->title}}</h1>
         <div class="mt-4 large:mt-3 wide:mt-6 text-left">
             {!!$page->description!!}

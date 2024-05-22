@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: May 19, 2024 at 06:46 PM
+-- Generation Time: May 22, 2024 at 02:06 PM
 -- Server version: 8.2.0
 -- PHP Version: 8.3.1
 
@@ -647,7 +647,7 @@ CREATE TABLE IF NOT EXISTS `inquiries` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=15 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `inquiries`
@@ -656,7 +656,18 @@ CREATE TABLE IF NOT EXISTS `inquiries` (
 INSERT INTO `inquiries` (`id`, `experience_name`, `first_name`, `last_name`, `booking_date`, `email`, `phone`, `comment`, `created_at`, `updated_at`) VALUES
 (1, '', 'Sophia', 'Durham', '2024-05-22', 'cykyd@mailinator.com', '+1 (829) 468-8203', 'Blanditiis odit fugi', '2024-05-19 09:43:42', '2024-05-19 09:43:42'),
 (2, 'Adam Baldwin', 'Lillith', 'Olsen', '2024-05-23', 'hevosuluh@mailinator.com', '+1 (975) 261-9322', 'Non dolorem ad lorem', '2024-05-19 10:26:59', '2024-05-19 10:26:59'),
-(3, 'A once-in-a-lifetime spiritual romantic dining experience', 'Angga', 'Rista', '2024-05-30', '3xasov@gmail.com', '0811396263', 'test', '2024-05-19 10:28:15', '2024-05-19 10:28:15');
+(3, 'A once-in-a-lifetime spiritual romantic dining experience', 'Angga', 'Rista', '2024-05-30', '3xasov@gmail.com', '0811396263', 'test', '2024-05-19 10:28:15', '2024-05-19 10:28:15'),
+(4, 'The Intimate Wedding', 'Clark', 'Bates', '2024-11-07', 'hehot@mailinator.com', '+1 (562) 167-8959', 'Sunt omnis debitis ', '2024-05-22 05:17:43', '2024-05-22 05:17:43'),
+(5, 'The Intimate Wedding', 'Briar', 'Garcia', '2024-12-26', 'qude@mailinator.com', '+1 (826) 682-2031', 'Reiciendis quam fuga', '2024-05-22 05:18:29', '2024-05-22 05:18:29'),
+(6, 'Ultimate Millionaire Hangout', 'Wanda', 'Armstrong', '2024-05-23', 'jupit@mailinator.com', '+1 (161) 117-7152', 'Quis nisi aliquid co', '2024-05-22 05:25:25', '2024-05-22 05:25:25'),
+(7, 'Ultimate Millionaire Hangout', 'Kelly', 'Talley', '2024-11-02', 'hecocyz@mailinator.com', '+1 (757) 743-1133', 'Est cupidatat illo e', '2024-05-22 05:27:35', '2024-05-22 05:27:35'),
+(8, 'Ultimate Millionaire Hangout', 'Eve', 'Hardin', '2024-11-07', 'jiquh@mailinator.com', '+1 (752) 658-8476', 'Blanditiis ea vero c', '2024-05-22 05:31:11', '2024-05-22 05:31:11'),
+(9, 'Ultimate Millionaire Hangout', 'Quinn', 'Rich', '2024-09-04', 'giny@mailinator.com', '+1 (473) 964-3723', 'Minima dolores non l', '2024-05-22 05:32:50', '2024-05-22 05:32:50'),
+(10, 'Ultimate Millionaire Hangout', 'Quinn', 'Rich', '2024-09-04', 'giny@mailinator.com', '+1 (473) 964-3723', 'Minima dolores non l', '2024-05-22 05:32:57', '2024-05-22 05:32:57'),
+(11, 'Ultimate Millionaire Hangout', 'Imani', 'Strickland', '2024-12-04', 'vote@mailinator.com', '+1 (485) 389-9812', 'Dolores qui nulla do', '2024-05-22 05:35:19', '2024-05-22 05:35:19'),
+(12, 'Ultimate Millionaire Hangout', 'Isadora', 'Battle', '2024-09-04', 'jumodiduqe@mailinator.com', '+1 (132) 133-9753', 'In vero officiis arc', '2024-05-22 05:36:16', '2024-05-22 05:36:16'),
+(13, 'Ultimate Millionaire Hangout', 'Kirestin', 'Cervantes', '2024-12-03', 'hunelopybu@mailinator.com', '+1 (844) 442-3255', 'Sed nisi et modi ex ', '2024-05-22 05:37:58', '2024-05-22 05:37:58'),
+(14, 'Ultimate Millionaire Hangout', 'Angga', 'Rista', '2024-05-23', '3xasov@gmail.com', '0811396263', 'test', '2024-05-22 05:40:08', '2024-05-22 05:40:08');
 
 -- --------------------------------------------------------
 
@@ -1034,7 +1045,10 @@ CREATE TABLE IF NOT EXISTS `sessions` (
 --
 
 INSERT INTO `sessions` (`id`, `user_id`, `ip_address`, `user_agent`, `payload`, `last_activity`) VALUES
-('mXQq0nxYu60z4vpTzvXGUipfRZHz2GKXBJo0KMvW', 1, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36', 'YTo3OntzOjY6Il90b2tlbiI7czo0MDoiUzdQd2U4bXFDNDVOM0dSUWlTM2Q1bElINWU5NFJXZlhaeHE4Qlc2ZyI7czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319czo1MDoibG9naW5fd2ViXzU5YmEzNmFkZGMyYjJmOTQwMTU4MGYwMTRjN2Y1OGVhNGUzMDk4OWQiO2k6MTtzOjE3OiJwYXNzd29yZF9oYXNoX3dlYiI7czo2MDoiJDJ5JDEyJHNhUERwUGZFZEprUFNwTTJFNzJpUWVxV2NHZ2Y5WTdObUI4c0pCMnVpTzJDMnFxcmh0cGt5IjtzOjk6Il9wcmV2aW91cyI7YToxOntzOjM6InVybCI7czozMToiaHR0cDovL2xvY2FsaG9zdDo4MDAwL3RoYW5rLXlvdSI7fXM6ODoiZmlsYW1lbnQiO2E6MDp7fXM6NjoidGFibGVzIjthOjI6e3M6MjQ6Ikxpc3RFeHBlcmllbmNlc19wZXJfcGFnZSI7czozOiJhbGwiO3M6MTg6Ikxpc3RQYWdlc19wZXJfcGFnZSI7czozOiJhbGwiO319', 1716143296);
+('FcQZ5BBFlgLYD73mqkGh63QPHzO6xiA7Yj4xG5lS', NULL, '192.168.1.7', 'Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Mobile Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiYUUwN0p3TnR6R1hpaVBrZWxGcVpDaWk0dzNWcnJpZFVUMmEzQWpreiI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MzY6Imh0dHA6Ly8xOTIuMTY4LjEuMTE6ODAwMC9leHBlcmllbmNlcyI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fX0=', 1716385228),
+('FzWqHxrZzSuOaJeDwa840xy5azCMTQm3YyReTeYd', 1, '192.168.1.11', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36', 'YTo2OntzOjY6Il90b2tlbiI7czo0MDoiSk9sUXRWWXBFakt3UlV3a0lkdlplNXVUaEw2THhYQlZoM05Zc0phTiI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6NDU6Imh0dHA6Ly8xOTIuMTY4LjEuMTE6ODAwMC9wYW5lbC9hZG1pbi9zZXR0aW5ncyI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fXM6NTA6ImxvZ2luX3dlYl81OWJhMzZhZGRjMmIyZjk0MDE1ODBmMDE0YzdmNThlYTRlMzA5ODlkIjtpOjE7czoxNzoicGFzc3dvcmRfaGFzaF93ZWIiO3M6NjA6IiQyeSQxMiRzYVBEcFBmRWRKa1BTcE0yRTcyaVFlcVdjR2dmOVk3Tm1COHNKQjJ1aU8yQzJxcXJodHBreSI7czo2OiJ0YWJsZXMiO2E6MTp7czoyMToiTGlzdFNldHRpbmdzX3Blcl9wYWdlIjtzOjM6ImFsbCI7fX0=', 1716386187),
+('UA6W2vVgFyGXV6r1Cr1QDGaDG1IABP75qHNiQ5S9', NULL, '192.168.1.11', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiUmpUem5vQzdiU3NZaE1veGpXWmR4cDdsdjFhYWVWcmtCWTJOS3pnSCI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MzY6Imh0dHA6Ly8xOTIuMTY4LjEuMTE6ODAwMC9leHBlcmllbmNlcyI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fX0=', 1716386187),
+('hcI3VIhSwkAUi2M6c4kbrX4GvGFZyQkWvJbRYdRq', NULL, '192.168.1.11', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiWFlmWFE3ZEtDTFB4M2x6eEtjeVNMbjlNS2s5SkMxRFdVajloZXRsdiI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MzY6Imh0dHA6Ly8xOTIuMTY4LjEuMTE6ODAwMC9leHBlcmllbmNlcyI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fX0=', 1716385527);
 
 -- --------------------------------------------------------
 

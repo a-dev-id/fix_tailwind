@@ -1,7 +1,7 @@
 <nav class="navbar text-white">
     <div class="nav-border-b border-white">
         <div class="nav-left">
-            <div class="pe-4 md:pe-6 lg:pe-6 large:pe-6 wide:pe-6 large:hidden wide:hidden">
+            <div class="pe-4 md:pe-6 lg:pe-6 large:pe-6 wide:pe-6 lg:hidden large:hidden wide:hidden">
                 <button id="open-offcanvas">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 mt-2">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
@@ -23,13 +23,13 @@
                     </svg>
                 </a>
             </div>
-            <div class="pe-3 hidden md:hidden large:block wide:block">
+            <div class="pe-3 hidden md:hidden lg:block large:block wide:block">
                 <a href="" class="newsletter">newsletter</a>
             </div>
         </div>
         <div class="nav-middle">
             <a href="{{route('index')}}">
-                <img src="{{asset('images/placeholder/horizontal.webp')}}" data-src="https://hanginggardensofbali.com/images/logo/Logo-02-HGOB.png" class="lazy logo brightness-0 invert-[1]" alt="">
+                <img src="{{asset('images/logo.png')}}" data-src="" class="logo brightness-0 invert-[1]" alt="">
             </a>
         </div>
         <div class="nav-right">
@@ -38,7 +38,7 @@
             </a>
         </div>
     </div>
-    <div class="nav-items hidden md:hidden large:block wide:block">
+    <div class="nav-items hidden md:hidden lg:block large:block wide:block">
         <a href="{{route('offers.index')}}" class="item">offers</a>
         <a href="{{route('accommodations.index')}}" class="item">accommodations</a>
         <a href="{{route('restaurant.index')}}" class="item">restaurant</a>

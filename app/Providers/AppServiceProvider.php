@@ -41,6 +41,8 @@ class AppServiceProvider extends ServiceProvider
         $tripadvisor = Setting::where('status', 1)->where('id', '10')->first();
         $telegram = Setting::where('status', 1)->where('id', '11')->first();
         $booking_engine = Setting::where('status', 1)->where('id', '12')->first();
+        $inquiry_header = Setting::where('status', 1)->where('id', '13')->first();
+        $logo = Setting::where('status', 1)->where('id', '14')->first();
 
         View::share('instagram', $instagram);
         View::share('facebook', $facebook);

@@ -40,7 +40,7 @@
 
 <main>
     {{-- page description section --}}
-    <section class="page-description mb-24" data-aos="fade-up">
+    <section class="page-description mb-24">
         <h1 class="main-title">{{$page->title}}</h1>
         <div class="mt-4 large:mt-3 wide:mt-4">
             {!!$page->description!!}
@@ -48,7 +48,7 @@
     </section>
 
     @foreach ($press_rooms as $data)
-    <section class="fusion-card" wire:key="{{$data->id}}" data-aos="fade-up">
+    <section class="fusion-card" wire:key="{{$data->id}}">
         <h2 class="sub-title2 uppercase mb-5">{{$data->title}}</h2>
         <div class="flex flex-col md:flex-row lg:flex-row large:flex-row wide:flex-row">
             <img class="lazy f-c-image" src="{{asset('images/placeholder/horizontal.webp')}}" data-src="{{asset('storage/'.$data->image)}}" alt="Placeholder Image">
@@ -67,13 +67,13 @@
     </section>
     @endforeach
 
-    <section class="mx-auto w-8/12 flex justify-end mb-10" data-aos="fade-up">
+    <section class="mx-auto w-8/12 flex justify-end mb-10">
         <div class="w-32">
             {{$press_rooms->links('livewire.pagination')}}
         </div>
     </section>
 
-    <section class="featured mb-24" data-aos="fade-up" data-aos-delay="200">
+    <section class="featured mb-24">
         <div class="content-carousel">
             @foreach ($page->images as $data)
             <div class="max-w-xl mx-3" wire:key="{{$data->id}}">

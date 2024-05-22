@@ -34,7 +34,7 @@
 
 <main>
     {{-- page description section --}}
-    <section class="page-description mb-24" data-aos="fade-up">
+    <section class="page-description mb-24">
         <h1 class="main-title">{{$page->title}}</h1>
         <div class="mt-4 large:mt-3 wide:mt-4">
             {!!$page->description!!}
@@ -42,7 +42,7 @@
     </section>
 
     @foreach ($stories as $data)
-    <section class="fusion-card" wire:key="{{$data->id}}" data-aos="fade-up">
+    <section class="fusion-card" wire:key="{{$data->id}}">
         <h2 class="sub-title2 uppercase">{{$data->title}}</h2>
         <div class="text-[#a88444] pt-3 pb-4 text-lg">{{$data->subtitle}}</div>
         <div class="flex flex-col md:flex-row lg:flex-row large:flex-row wide:flex-row">
@@ -62,7 +62,7 @@
     </section>
     @endforeach
 
-    <section class="mx-auto w-8/12 flex justify-end mb-10" data-aos="fade-up">
+    <section class="mx-auto w-8/12 flex justify-end mb-10">
         <div class="w-32">
             {{$stories->links('livewire.pagination')}}
         </div>

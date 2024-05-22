@@ -3,10 +3,10 @@
 namespace App\Livewire;
 
 use App\Models\Experience;
-use App\Models\Inquiry;
 use App\Models\Page;
-use Carbon\Carbon;
 use Livewire\Component;
+use Carbon\Carbon;
+use App\Models\Inquiry;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\InquiryReceived;
 
@@ -61,10 +61,13 @@ class Experiences extends Component
             'comment' => $this->comment,
         ];
 
-        Mail::to('angga@hanginggardensinternational.com')->send(new InquiryReceived($mailData));
+        Mail::to('angga@hanginggardensinternational.com')
+            ->cc($this->email)
+            ->send(new InquiryReceived($mailData));
 
         return redirect()->to('/thank-you');
     }
+
     public function render()
     {
         return view('livewire.experiences', [
